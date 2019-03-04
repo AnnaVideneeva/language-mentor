@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageMentor.Services", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageMentor.Services.Logic", "LanguageMentor.Services.Logic\LanguageMentor.Services.Logic.csproj", "{145BB7A1-7669-4265-8D83-D2A2B152D50B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{93F7C0CE-03BF-4E1B-A01C-165994841FB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageMentor.Core", "LanguageMentor.Core\LanguageMentor.Core.csproj", "{F7DCF7ED-6D0A-4D96-A763-60A495B66139}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{145BB7A1-7669-4265-8D83-D2A2B152D50B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{145BB7A1-7669-4265-8D83-D2A2B152D50B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{145BB7A1-7669-4265-8D83-D2A2B152D50B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7DCF7ED-6D0A-4D96-A763-60A495B66139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7DCF7ED-6D0A-4D96-A763-60A495B66139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7DCF7ED-6D0A-4D96-A763-60A495B66139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DCF7ED-6D0A-4D96-A763-60A495B66139}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +51,6 @@ Global
 		{1AFFD538-CC1B-4CA8-8404-78474039AE68} = {92A069AE-1D49-44B8-BC33-66A358E7C465}
 		{FCCE1AF2-C306-4092-838A-CF1B9E6185A5} = {1AFFD538-CC1B-4CA8-8404-78474039AE68}
 		{145BB7A1-7669-4265-8D83-D2A2B152D50B} = {1AFFD538-CC1B-4CA8-8404-78474039AE68}
+		{F7DCF7ED-6D0A-4D96-A763-60A495B66139} = {93F7C0CE-03BF-4E1B-A01C-165994841FB3}
 	EndGlobalSection
 EndGlobal

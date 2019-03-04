@@ -4,8 +4,10 @@ using LanguageMentor.Services.Models;
 
 namespace LanguageMentor.Services.Logic.Services
 {
+    /// <inheritdoc />
     public class TestsService : ITestsService
     {
+        /// <inheritdoc />
         public IEnumerable<Task> GetTrialTest()
         {
             return new List<Task>()
