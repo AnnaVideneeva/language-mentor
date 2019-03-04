@@ -8,7 +8,7 @@ namespace LanguageMentor.Services.Logic.Services
     public class TestsService : ITestsService
     {
         /// <inheritdoc />
-        public IEnumerable<Task> GetTrialTest()
+        public IEnumerable<Task> GetDiagnosticTest()
         {
             return new List<Task>()
             {
@@ -50,6 +50,16 @@ namespace LanguageMentor.Services.Logic.Services
                         }
                     }
                 }
+            };
+        }
+
+        /// <inheritdoc />
+        public LanguageLevel GetLanguageLevelFromResultOfDiagnosticTest(IEnumerable<Task> passedTest)
+        {
+            return new LanguageLevel()
+            {
+                LanguageLevelId = 1,
+                LevelTitle = "B1",
             };
         }
     }

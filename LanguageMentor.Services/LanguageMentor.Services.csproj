@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\ITestsService.cs" />
     <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\LanguageLevel.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

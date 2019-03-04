@@ -23,6 +23,11 @@ namespace LanguageMentor.Services.Models
         public int CorrectAnswerId { get; set; }
 
         /// <summary>
+        /// Gets or sets selected answer ID.
+        /// </summary>
+        public int SelectedAnswerId { get; set; }
+
+        /// <summary>
         /// Gets or sets a list of answer choices.
         /// </summary>
         public IList<Answer> AnswerChoices { get; set; }
