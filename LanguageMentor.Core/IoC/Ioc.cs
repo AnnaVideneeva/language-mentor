@@ -2,16 +2,10 @@
 
 namespace LanguageMentor.Core.IoC
 {
-    /// <summary>
-    /// IoC container factory method.
-    /// </summary>
     public static class Ioc
     {
         private static IUnityContainer _container;
 
-        /// <summary>
-        /// Gets Singleton IUnity container
-        /// </summary>
         public static IUnityContainer Container
         {
             get
@@ -25,9 +19,6 @@ namespace LanguageMentor.Core.IoC
             }
         }
 
-        /// <summary> Creates a new <see cref="T:Microsoft.Practices.Unity.IUnityContainer"/> instance.
-        /// </summary>
-        /// <returns>A newly created <see cref="T:Microsoft.Practices.Unity.IUnityContainer"/> object.</returns>
         private static IUnityContainer CreateContainer()
         {
             return new UnityContainer();

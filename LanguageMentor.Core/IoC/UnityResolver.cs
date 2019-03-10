@@ -5,24 +5,15 @@ using Unity;
 
 namespace LanguageMentor.Core.IoC
 {
-    /// <summary>
-    /// Resolves dependencies using Unity
-    /// </summary>
     public class UnityResolver : IDependencyResolver
     {
         private readonly IUnityContainer _container;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UnityResolver"/> class.
-        /// </summary>
-        /// <param name="container">Container</param>
-        /// <exception cref="ArgumentNullException"><paramref name="container"/> must not be null</exception>
         public UnityResolver(IUnityContainer container)
         {
             _container = container ?? throw new ArgumentNullException(nameof(container));
         }
 
-        /// <inheritdoc />
         public object GetService(Type serviceType)
         {
             try
@@ -35,7 +26,6 @@ namespace LanguageMentor.Core.IoC
             }
         }
 
-        /// <inheritdoc />
         public IEnumerable<object> GetServices(Type serviceType)
         {
             try
@@ -48,20 +38,17 @@ namespace LanguageMentor.Core.IoC
             }
         }
 
-        /// <inheritdoc />
         public IDependencyScope BeginScope()
         {
             var child = _container.CreateChildContainer();
             return new UnityResolver(child);
         }
 
-        /// <inheritdoc />
         public void Dispose()
         {
             Dispose(true);
         }
 
-        /// <inheritdoc />
         protected virtual void Dispose(bool disposing)
         {
             _container.Dispose();

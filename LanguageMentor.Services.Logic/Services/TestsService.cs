@@ -4,10 +4,8 @@ using LanguageMentor.Services.Models;
 
 namespace LanguageMentor.Services.Logic.Services
 {
-    /// <inheritdoc />
     public class TestsService : ITestsService
     {
-        /// <inheritdoc />
         public IEnumerable<Task> GetDiagnosticTest()
         {
             return new List<Task>()
@@ -53,7 +51,6 @@ namespace LanguageMentor.Services.Logic.Services
             };
         }
 
-        /// <inheritdoc />
         public LanguageLevel GetLanguageLevelFromResultOfDiagnosticTest(IEnumerable<Task> passedTest)
         {
             return new LanguageLevel()

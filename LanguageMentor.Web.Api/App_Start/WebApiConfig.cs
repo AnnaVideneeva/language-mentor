@@ -6,15 +6,8 @@ using LanguageMentor.Web.Api.Configurations;
 
 namespace LanguageMentor.Web.Api.App_Start
 {
-    /// <summary>
-    /// Represents class for configuration.
-    /// </summary>
     public class WebApiConfig
     {
-        /// <summary>
-        /// Configure HTTP configuration. 
-        /// </summary>
-        /// <param name="config">HTTP configuration.</param>
         public static void Configure(HttpConfiguration config)
         {
             config.MapHttpAttributeRoutes();

@@ -7,16 +7,8 @@ using LanguageMentor.Web.Api.Mapping;
 
 namespace LanguageMentor.Web.Api.Configurations
 {
-    /// <summary>
-    /// Represents for Unity configuration.
-    /// </summary>
     public static class UnityConfiguration
     {
-        /// <summary>
-        /// Applies the unity container.
-        /// </summary>
-        /// <param name="container">The container.</param>
-        /// <returns>Unity container.</returns>
         public static IUnityContainer ApplyDependencies(this IUnityContainer container)
         {
             return container
