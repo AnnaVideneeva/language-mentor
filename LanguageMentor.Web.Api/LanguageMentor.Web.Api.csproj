@@ -88,8 +88,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Configurations\UnityConfiguration.cs" />
+    <Compile Include="Configurations\WebApiConfig.cs" />
+    <Compile Include="Configurations\UnityConfig.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Mapping\AnswerModelMapping.cs" />
     <Compile Include="Mapping\TaskModelMapping.cs" />
