@@ -114,12 +114,12 @@
       <Project>{f7dcf7ed-6d0a-4d96-a763-60a495b66139}</Project>
       <Name>LanguageMentor.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LanguageMentor.Services.Logic\LanguageMentor.Services.Logic.csproj">
-      <Project>{145bb7a1-7669-4265-8d83-d2a2b152d50b}</Project>
-      <Name>LanguageMentor.Services.Logic</Name>
+    <ProjectReference Include="..\LanguageMentor.Services.Interfaces\LanguageMentor.Services.Interfaces.csproj">
+      <Project>{fcce1af2-c306-4092-838a-cf1b9e6185a5}</Project>
+      <Name>LanguageMentor.Services.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\LanguageMentor.Services\LanguageMentor.Services.csproj">
-      <Project>{fcce1af2-c306-4092-838a-cf1b9e6185a5}</Project>
+      <Project>{922a6f3d-b4e2-4891-9fc4-96b134aeb552}</Project>
       <Name>LanguageMentor.Services</Name>
     </ProjectReference>
   </ItemGroup>
@@ -149,12 +149,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
