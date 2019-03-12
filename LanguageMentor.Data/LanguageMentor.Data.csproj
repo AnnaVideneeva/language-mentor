@@ -50,9 +50,11 @@
     <Compile Include="Entities\PointAnswerPoolEntity.cs" />
     <Compile Include="Entities\PointEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\IAnswerProvider.cs" />
+    <Compile Include="Providers\IExaminationProvider.cs" />
+    <Compile Include="Providers\IExerciseProvider.cs" />
+    <Compile Include="Providers\IPointProvider.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Providers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

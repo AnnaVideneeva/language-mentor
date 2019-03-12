@@ -41,10 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\ITestsService.cs" />
+    <Compile Include="Constants\Enums\ExaminationTypes.cs" />
+    <Compile Include="Interfaces\IExaminationService.cs" />
     <Compile Include="Models\Answer.cs" />
-    <Compile Include="Models\LanguageLevel.cs" />
-    <Compile Include="Models\Task.cs" />
+    <Compile Include="Models\Examination.cs" />
+    <Compile Include="Models\ExaminationType.cs" />
+    <Compile Include="Models\Exercise.cs" />
+    <Compile Include="Models\Level.cs" />
+    <Compile Include="Models\Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

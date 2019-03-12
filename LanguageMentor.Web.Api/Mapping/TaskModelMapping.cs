@@ -14,12 +14,12 @@ namespace LanguageMentor.Web.Api.Mapping
 
         private static void ToServiceModel(IProfileExpression mapper)
         {
-            mapper.CreateMap<TaskRequestModel, Task>();
+            mapper.CreateMap<TaskRequestModel, Point>();
         }
 
         private static void ToWebModel(IProfileExpression mapper)
         {
-            mapper.CreateMap<Task, TaskResponseModel>();
+            mapper.CreateMap<Point, TaskResponseModel>();
         }
     }
 }

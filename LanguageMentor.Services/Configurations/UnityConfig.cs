@@ -1,5 +1,7 @@
 ﻿using Unity;
-using LanguageMentor.Data.EF6.Configurations;
+using Unity.Lifetime;
+using LanguageMentor.Data.EF6.Providers;
+using LanguageMentor.Data.Providers;
 
 namespace LanguageMentor.Services.Logic.Configurations
 {
@@ -7,6 +9,8 @@ namespace LanguageMentor.Services.Logic.Configurations
     {
         public static IUnityContainer RegisterProviders(this IUnityContainer container)
         {
+            container.RegisterType<IExaminationProvider, ExaminationProvider>(new HierarchicalLifetimeManager());
+
             return container;
         }
     }

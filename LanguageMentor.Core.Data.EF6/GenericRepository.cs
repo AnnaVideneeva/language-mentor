@@ -18,6 +18,11 @@ namespace LanguageMentor.Core.Data.EF6
             _dbSet = context.Set<TEntity>();
         }
 
+        public IQueryable<TEntity> GetAsNoTracking()
+        {
+            return _dbSet.AsNoTracking();
+        }
+
         public TEntity Find(int id)
         {
             return _dbSet.Find(id);
