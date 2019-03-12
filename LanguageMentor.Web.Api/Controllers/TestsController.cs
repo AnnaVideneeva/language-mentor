@@ -23,7 +23,7 @@ namespace LanguageMentor.Web.Api.Controllers
         [HttpGet]
         public IHttpActionResult GetDiagnosticExamination()
         {
-            var examination = _examinationService.Get(ExaminationTypes.DiagnosticTest);
+            var examination = _examinationService.Get(ExaminationTypes.DiagnosticExamination);
 
             return Ok(examination);
         }

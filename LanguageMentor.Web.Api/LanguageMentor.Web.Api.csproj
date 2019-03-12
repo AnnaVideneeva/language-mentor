@@ -99,9 +99,9 @@
     <Compile Include="Configurations\WebApiConfig.cs" />
     <Compile Include="Configurations\UnityConfig.cs" />
     <Compile Include="Controllers\TestsController.cs" />
-    <Compile Include="Mapping\AnswerModelMapping.cs" />
-    <Compile Include="Mapping\TaskModelMapping.cs" />
-    <Compile Include="Mapping\WebApiMapperProfile.cs" />
+    <Compile Include="Configurations\MappingConfigurations\AnswerModelMapping.cs" />
+    <Compile Include="Configurations\MappingConfigurations\TaskModelMapping.cs" />
+    <Compile Include="Configurations\MappingConfigurations\WebApiMapperProfile.cs" />
     <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\TaskRequestModel.cs" />
     <Compile Include="Models\TaskResponseModel.cs" />
