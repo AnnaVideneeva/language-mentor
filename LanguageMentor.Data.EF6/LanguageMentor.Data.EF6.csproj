@@ -40,12 +40,21 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.9.7\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.9.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.9.7\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\DbContexts\LanguageMentorDbContext.cs" />
@@ -57,6 +66,7 @@
     <Compile Include="Configurations\EntityConfigurations\LevelEntityConfig.cs" />
     <Compile Include="Configurations\EntityConfigurations\PointAnswerPoolEntityConfig.cs" />
     <Compile Include="Configurations\EntityConfigurations\PointEntityConfig.cs" />
+    <Compile Include="Configurations\UnityConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +77,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LanguageMentor.Core.Data.EF6\LanguageMentor.Core.Data.EF6.csproj">
+      <Project>{7f4c5c3d-65df-4055-a6bc-f306c34a82df}</Project>
+      <Name>LanguageMentor.Core.Data.EF6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LanguageMentor.Core.Data\LanguageMentor.Core.Data.csproj">
+      <Project>{7e2fbd58-e48c-440a-a6ab-993a43be5227}</Project>
+      <Name>LanguageMentor.Core.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LanguageMentor.Data\LanguageMentor.Data.csproj">
       <Project>{c57d1c6f-2b2d-411c-8922-fdfde3fefeba}</Project>
       <Name>LanguageMentor.Data</Name>

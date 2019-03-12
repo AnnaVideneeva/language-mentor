@@ -67,6 +67,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -120,6 +121,10 @@
     <ProjectReference Include="..\LanguageMentor.Core\LanguageMentor.Core.csproj">
       <Project>{f7dcf7ed-6d0a-4d96-a763-60a495b66139}</Project>
       <Name>LanguageMentor.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LanguageMentor.Data.EF6\LanguageMentor.Data.EF6.csproj">
+      <Project>{c6cdcb12-2e8c-4c46-b9bd-f3a3c90f1550}</Project>
+      <Name>LanguageMentor.Data.EF6</Name>
     </ProjectReference>
     <ProjectReference Include="..\LanguageMentor.Services.Interfaces\LanguageMentor.Services.Interfaces.csproj">
       <Project>{fcce1af2-c306-4092-838a-cf1b9e6185a5}</Project>
