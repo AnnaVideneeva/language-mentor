@@ -48,16 +48,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\DbContexts\LanguageMentorDbContext.cs" />
+    <Compile Include="Configurations\EntityConfigurations\AnswerEntityConfig.cs" />
+    <Compile Include="Configurations\EntityConfigurations\ExaminationEntityConfig.cs" />
+    <Compile Include="Configurations\EntityConfigurations\ExaminationTypeEntityConfig.cs" />
+    <Compile Include="Configurations\EntityConfigurations\ExerciseEntityConfig.cs" />
+    <Compile Include="Configurations\EntityConfigurations\ExerciseExaminationPoolEntityConfig.cs" />
+    <Compile Include="Configurations\EntityConfigurations\LevelEntityConfig.cs" />
+    <Compile Include="Configurations\EntityConfigurations\PointAnswerPoolEntityConfig.cs" />
+    <Compile Include="Configurations\EntityConfigurations\PointEntityConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Configurations\Mapping\" />
-    <Folder Include="Contexts\" />
     <Folder Include="Providers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LanguageMentor.Data\LanguageMentor.Data.csproj">
+      <Project>{c57d1c6f-2b2d-411c-8922-fdfde3fefeba}</Project>
+      <Name>LanguageMentor.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

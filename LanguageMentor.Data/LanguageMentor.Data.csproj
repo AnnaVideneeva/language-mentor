@@ -41,10 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AnswerEntity.cs" />
+    <Compile Include="Entities\ExaminationEntity.cs" />
+    <Compile Include="Entities\ExaminationTypeEntity.cs" />
+    <Compile Include="Entities\ExerciseEntity.cs" />
+    <Compile Include="Entities\ExerciseExaminationPoolEntity.cs" />
+    <Compile Include="Entities\LevelEntity.cs" />
+    <Compile Include="Entities\PointAnswerPoolEntity.cs" />
+    <Compile Include="Entities\PointEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entities\" />
     <Folder Include="Providers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
