@@ -1,9 +1,9 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using LanguageMentor.Data.Providers;
 using LanguageMentor.Services.Constants.Enums;
 using LanguageMentor.Services.Interfaces;
 using LanguageMentor.Services.Models;
-using System.Collections.Generic;
 
 namespace LanguageMentor.Services.Logic.Services
 {
@@ -44,9 +44,6 @@ namespace LanguageMentor.Services.Logic.Services
 
                 foreach (var point in exercise.Points)
                 {
-                    var correctAnswerEntities = _answerProvider.GetCorrectAnswers(point.PointId);
-                    point.CorrectAnswers = _mapper.Map<IList<Answer>>(correctAnswerEntities);
-
                     var answerChoicesEntities = _answerProvider.GetAnswerChoices(point.PointId);
                     point.AnswerChoices = _mapper.Map<IList<Answer>>(answerChoicesEntities);
                 }

@@ -13,5 +13,7 @@ namespace LanguageMentor.Services.Models
         public IList<Answer> AnswerChoices { get; set; }
 
         public IList<Answer> CorrectAnswers { get; set; }
+
+        public IList<Answer> SelectedAnswers { get; set; }
     }
 }

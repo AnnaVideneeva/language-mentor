@@ -13,8 +13,7 @@ namespace LanguageMentor.Web.Api.Controllers
 
         public ExaminationController(
             IExaminationService examinationService, 
-            IMapper mapper
-            )
+            IMapper mapper)
         {
             _examinationService = examinationService;
             _mapper = mapper;
