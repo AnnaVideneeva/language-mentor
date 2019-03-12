@@ -2,9 +2,9 @@
 using LanguageMentor.Services.Models;
 using LanguageMentor.Web.Api.Models;
 
-namespace LanguageMentor.Web.Api.Mapping
+namespace LanguageMentor.Web.Api.Configurations.MappingConfigurations
 {
-    public class TaskModelMapping
+    public class PointModelMapping
     {
         public static void CreateMap(IProfileExpression mapperProfile)
         {
@@ -14,12 +14,12 @@ namespace LanguageMentor.Web.Api.Mapping
 
         private static void ToServiceModel(IProfileExpression mapper)
         {
-            mapper.CreateMap<TaskRequestModel, Point>();
+            mapper.CreateMap<PointModel, Point>();
         }
 
         private static void ToWebModel(IProfileExpression mapper)
         {
-            mapper.CreateMap<Point, TaskResponseModel>();
+            mapper.CreateMap<Point, PointModel>();
         }
     }
 }

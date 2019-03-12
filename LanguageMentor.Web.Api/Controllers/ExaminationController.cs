@@ -26,5 +26,13 @@ namespace LanguageMentor.Web.Api.Controllers
 
             return Ok(examination);
         }
+
+        [HttpPost]
+        public IHttpActionResult CheckTest()
+        {
+            var examination = _examinationService.Get(ExaminationTypes.DiagnosticExamination);
+
+            return Ok(examination);
+        }
     }
 }

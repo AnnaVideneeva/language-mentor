@@ -4,7 +4,7 @@ using LanguageMentor.Web.Api.Models;
 
 namespace LanguageMentor.Web.Api.Configurations.MappingConfigurations
 {
-    public class AnswerModelMapping
+    public class ExaminationModelMapping
     {
         public static void CreateMap(IProfileExpression mapperProfile)
         {
@@ -14,12 +14,12 @@ namespace LanguageMentor.Web.Api.Configurations.MappingConfigurations
 
         private static void ToServiceModel(IProfileExpression mapper)
         {
-            mapper.CreateMap<AnswerModel, Answer>();
+            mapper.CreateMap<ExaminationModel, Examination>();
         }
 
         private static void ToWebModel(IProfileExpression mapper)
         {
-            mapper.CreateMap<Answer, AnswerModel>();
+            mapper.CreateMap<Examination, ExaminationModel>();
         }
     }
 }

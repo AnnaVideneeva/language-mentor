@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using LanguageMentor.Web.Api.Configurations.MappingConfigurations;
 
 namespace LanguageMentor.Web.Api.Mapping
 {
@@ -6,7 +7,9 @@ namespace LanguageMentor.Web.Api.Mapping
     {
         public WebApiMapperProfile()
         {
-            TaskModelMapping.CreateMap(this);
+            ExaminationModelMapping.CreateMap(this);
+            ExerciseModelMapping.CreateMap(this);
+            PointModelMapping.CreateMap(this);
             AnswerModelMapping.CreateMap(this);
         }
     }
