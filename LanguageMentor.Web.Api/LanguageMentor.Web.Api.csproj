@@ -98,7 +98,7 @@
   <ItemGroup>
     <Compile Include="Configurations\WebApiConfig.cs" />
     <Compile Include="Configurations\UnityConfig.cs" />
-    <Compile Include="Controllers\TestsController.cs" />
+    <Compile Include="Controllers\ExaminationController.cs" />
     <Compile Include="Configurations\MappingConfigurations\AnswerModelMapping.cs" />
     <Compile Include="Configurations\MappingConfigurations\TaskModelMapping.cs" />
     <Compile Include="Configurations\MappingConfigurations\WebApiMapperProfile.cs" />

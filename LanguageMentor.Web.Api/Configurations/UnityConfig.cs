@@ -7,6 +7,7 @@ using LanguageMentor.Services.Interfaces;
 using LanguageMentor.Services.Logic.Services;
 using LanguageMentor.Services.Logic.Configurations;
 using LanguageMentor.Web.Api.Mapping;
+using LanguageMentor.Services.Logic.Configurations.MappingConfigurations;
 
 namespace LanguageMentor.Web.Api.Configurations
 {
@@ -33,6 +34,7 @@ namespace LanguageMentor.Web.Api.Configurations
             Mapper.Initialize(mapperConfig =>
             {
                 mapperConfig.AddProfile<WebApiMapperProfile>();
+                mapperConfig.AddProfile<ServicesMapperProfile>();
             });
 
             container.RegisterInstance(Mapper.Instance);

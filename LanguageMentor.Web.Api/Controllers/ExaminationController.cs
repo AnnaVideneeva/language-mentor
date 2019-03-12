@@ -6,12 +6,12 @@ using LanguageMentor.Services.Interfaces;
 
 namespace LanguageMentor.Web.Api.Controllers
 {
-    public class TestsController : ApiController
+    public class ExaminationController : ApiController
     {
         private readonly IExaminationService _examinationService;
         private readonly IMapper _mapper;
 
-        public TestsController(
+        public ExaminationController(
             IExaminationService examinationService, 
             IMapper mapper
             )

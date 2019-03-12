@@ -10,6 +10,9 @@ namespace LanguageMentor.Services.Logic.Configurations
         public static IUnityContainer RegisterProviders(this IUnityContainer container)
         {
             container.RegisterType<IExaminationProvider, ExaminationProvider>(new HierarchicalLifetimeManager());
+            container.RegisterType<IExerciseProvider, ExerciseProvider>(new HierarchicalLifetimeManager());
+            container.RegisterType<IPointProvider, PointProvider>(new HierarchicalLifetimeManager());
+            container.RegisterType<IAnswerProvider, AnswerProvider>(new HierarchicalLifetimeManager());
 
             return container;
         }

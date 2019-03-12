@@ -7,17 +7,17 @@ namespace LanguageMentor.Data.EF6.Configurations.DbContexts
 {
     public class LanguageMentorDbContext : DbContext
     {
-        //static LanguageMentorDbContext()
-        //{
-        //    var type = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
-        //    if (type == null)
-        //    {
-        //        throw new InvalidOperationException("Entity Framework provider is not configured.");
-        //    }
-        //}
+        static LanguageMentorDbContext()
+        {
+            var type = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
+            if (type == null)
+            {
+                throw new InvalidOperationException("Entity Framework provider is not configured.");
+            }
+        }
 
-        public LanguageMentorDbContext()
-            : base("LanguageMentorConnection")
+        public LanguageMentorDbContext(string connectionString)
+            : base(connectionString)
         {
         }
 
