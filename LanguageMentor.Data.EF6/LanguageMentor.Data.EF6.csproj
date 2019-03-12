@@ -67,13 +67,17 @@
     <Compile Include="Configurations\EntityConfigurations\PointAnswerPoolEntityConfig.cs" />
     <Compile Include="Configurations\EntityConfigurations\PointEntityConfig.cs" />
     <Compile Include="Configurations\UnityConfig.cs" />
+    <Compile Include="Migrations\201903121758037_Initial.cs" />
+    <Compile Include="Migrations\201903121758037_Initial.Designer.cs">
+      <DependentUpon>201903121758037_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\AnswerProvider.cs" />
     <Compile Include="Providers\ExaminationProvider.cs" />
     <Compile Include="Providers\ExerciseProvider.cs" />
     <Compile Include="Providers\PointProvider.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -91,6 +95,11 @@
       <Project>{c57d1c6f-2b2d-411c-8922-fdfde3fefeba}</Project>
       <Name>LanguageMentor.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903121758037_Initial.resx">
+      <DependentUpon>201903121758037_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

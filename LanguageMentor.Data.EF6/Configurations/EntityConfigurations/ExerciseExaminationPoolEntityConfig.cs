@@ -24,7 +24,7 @@ namespace LanguageMentor.Data.EF6.Configurations.EntityConfigurations
 
             HasRequired(exerciseExaminationPool => exerciseExaminationPool.Examination)
                 .WithMany(examination => examination.ExerciseExaminationPool)
-                .HasForeignKey(exerciseExaminationPool => exerciseExaminationPool.Examination)
+                .HasForeignKey(exerciseExaminationPool => exerciseExaminationPool.ExaminationId)
                 .WillCascadeOnDelete();
         }
     }

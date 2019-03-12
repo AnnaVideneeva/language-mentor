@@ -15,8 +15,8 @@ namespace LanguageMentor.Data.EF6.Configurations.EntityConfigurations
             Property(c => c.AnswerId).HasColumnName("answer_id").IsRequired();
             Property(c => c.IsCorrectAnswer).HasColumnName("is_correct_answer").IsRequired();
 
-            HasKey(c => c.PointId);
-            Property(c => c.PointId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasKey(c => c.PointAnswerPoolId);
+            Property(c => c.PointAnswerPoolId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             HasRequired(pointAnswerPool => pointAnswerPool.Answer)
                 .WithMany(answer => answer.PointAnswerPool)

@@ -5,19 +5,19 @@ using LanguageMentor.Data.Entities;
 
 namespace LanguageMentor.Data.EF6.Configurations.DbContexts
 {
-    class LanguageMentorDbContext : DbContext
+    public class LanguageMentorDbContext : DbContext
     {
-        static LanguageMentorDbContext()
-        {
-            var type = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
-            if (type == null)
-            {
-                throw new InvalidOperationException("Entity Framework provider is not configured.");
-            }
-        }
+        //static LanguageMentorDbContext()
+        //{
+        //    var type = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
+        //    if (type == null)
+        //    {
+        //        throw new InvalidOperationException("Entity Framework provider is not configured.");
+        //    }
+        //}
 
-        public LanguageMentorDbContext(string connectionString)
-            : base(connectionString)
+        public LanguageMentorDbContext()
+            : base("LanguageMentorConnection")
         {
         }
 
@@ -47,8 +47,8 @@ namespace LanguageMentor.Data.EF6.Configurations.DbContexts
             modelBuilder.Configurations.Add(new ExerciseEntityConfig());
             modelBuilder.Configurations.Add(new ExerciseExaminationPoolEntityConfig());
             modelBuilder.Configurations.Add(new LevelEntityConfig());
-            modelBuilder.Configurations.Add(new PointAnswerPoolEntityConfig());
             modelBuilder.Configurations.Add(new PointEntityConfig());
+            modelBuilder.Configurations.Add(new PointAnswerPoolEntityConfig());
         }
     }
 }

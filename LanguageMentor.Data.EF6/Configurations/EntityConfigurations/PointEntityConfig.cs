@@ -12,6 +12,7 @@ namespace LanguageMentor.Data.EF6.Configurations.EntityConfigurations
 
             Property(c => c.PointId).HasColumnName("point_id").IsRequired();
             Property(c => c.PointText).HasColumnName("point_text").IsRequired().HasMaxLength(256);
+            Property(c => c.ExerciseId).HasColumnName("exercise_id").IsRequired();
 
             HasKey(c => c.PointId);
             Property(c => c.PointId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
