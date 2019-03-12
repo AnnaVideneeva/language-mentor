@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{93F7C0CE-0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageMentor.Core", "LanguageMentor.Core\LanguageMentor.Core.csproj", "{F7DCF7ED-6D0A-4D96-A763-60A495B66139}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageMentor.Services.Interfaces", "LanguageMentor.Services.Interfaces\LanguageMentor.Services.Interfaces.csproj", "{FCCE1AF2-C306-4092-838A-CF1B9E6185A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageMentor.Services", "LanguageMentor.Services.Interfaces\LanguageMentor.Services.csproj", "{FCCE1AF2-C306-4092-838A-CF1B9E6185A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageMentor.Services", "LanguageMentor.Services\LanguageMentor.Services.csproj", "{922A6F3D-B4E2-4891-9FC4-96B134AEB552}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageMentor.Services.Implementation", "LanguageMentor.Services\LanguageMentor.Services.Implementation.csproj", "{922A6F3D-B4E2-4891-9FC4-96B134AEB552}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{AA0EE77C-EA27-45A7-BFF9-E73011BC3E41}"
 EndProject

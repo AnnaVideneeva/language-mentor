@@ -7,8 +7,8 @@
     <ProjectGuid>{922A6F3D-B4E2-4891-9FC4-96B134AEB552}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LanguageMentor.Services.Logic</RootNamespace>
-    <AssemblyName>LanguageMentor.Services.Logic</AssemblyName>
+    <RootNamespace>LanguageMentor.Services.Implementation</RootNamespace>
+    <AssemblyName>LanguageMentor.Services.Implementation</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -74,7 +74,7 @@
       <Project>{c57d1c6f-2b2d-411c-8922-fdfde3fefeba}</Project>
       <Name>LanguageMentor.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LanguageMentor.Services.Interfaces\LanguageMentor.Services.Interfaces.csproj">
+    <ProjectReference Include="..\LanguageMentor.Services.Interfaces\LanguageMentor.Services.csproj">
       <Project>{fcce1af2-c306-4092-838a-cf1b9e6185a5}</Project>
       <Name>LanguageMentor.Services.Interfaces</Name>
     </ProjectReference>
