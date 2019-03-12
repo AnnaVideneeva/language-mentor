@@ -14,19 +14,57 @@ namespace LanguageMentor.Services.Logic.Services
         private readonly IExerciseProvider _exerciseProvider;
         private readonly IPointProvider _pointProvider;
         private readonly IAnswerProvider _answerProvider;
+        private readonly ILevelProvider _levelProvider;
 
         public ExaminationService(
             IMapper mapper,
             IExaminationProvider examinationProvider,
             IExerciseProvider exerciseProvider,
             IPointProvider pointProvider,
-            IAnswerProvider answerProvider)
+            IAnswerProvider answerProvider,
+            ILevelProvider levelProvider)
         {
             _mapper = mapper;
             _examinationProvider = examinationProvider;
             _exerciseProvider = exerciseProvider;
             _pointProvider = pointProvider;
             _answerProvider = answerProvider;
+            _levelProvider = levelProvider;
+        }
+
+        public Level CheckTest(Examination examination)
+        {
+            int allPointCount = 0;
+            int correctPointCount = 0;
+            int level = (int)Levels.A1;
+
+            foreach (var exercise in examination.Exercises)
+            {
+                foreach (var point in exercise.Points)
+                {
+                    var correctAnswersEntities = _answerProvider.GetCorrectAnswers(point.PointId);
+                    point.CorrectAnswers = _mapper.Map<IList<Answer>>(correctAnswersEntities);
+
+                    if (point.SelectedAnswers == point.CorrectAnswers)
+                    {
+                        correctPointCount++;
+                    }
+
+                    allPointCount++;
+                }
+
+                level = correctPointCount <= allPointCount * 0.2 ?
+                    (int)Levels.A1 :
+                    (correctPointCount <= allPointCount * 0.4 ?
+                    (int)Levels.A2 :
+                    (correctPointCount <= allPointCount * 0.6 ?
+                    (int)Levels.B1 :
+                    (correctPointCount <= allPointCount * 0.8 ?
+                    (int)Levels.B2 :
+                    (int)Levels.C1)));
+            }
+
+            return _mapper.Map<Level>(_levelProvider.Get(level));
         }
 
         public Examination Get(ExaminationTypes examinationType)

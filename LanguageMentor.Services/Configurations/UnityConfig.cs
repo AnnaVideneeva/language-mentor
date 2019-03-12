@@ -13,6 +13,7 @@ namespace LanguageMentor.Services.Logic.Configurations
             container.RegisterType<IExerciseProvider, ExerciseProvider>(new HierarchicalLifetimeManager());
             container.RegisterType<IPointProvider, PointProvider>(new HierarchicalLifetimeManager());
             container.RegisterType<IAnswerProvider, AnswerProvider>(new HierarchicalLifetimeManager());
+            container.RegisterType<ILevelProvider, LevelProvider>(new HierarchicalLifetimeManager());
 
             return container;
         }

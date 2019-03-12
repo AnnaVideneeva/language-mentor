@@ -53,6 +53,7 @@
     <Compile Include="Providers\IAnswerProvider.cs" />
     <Compile Include="Providers\IExaminationProvider.cs" />
     <Compile Include="Providers\IExerciseProvider.cs" />
+    <Compile Include="Providers\ILevelProvider.cs" />
     <Compile Include="Providers\IPointProvider.cs" />
   </ItemGroup>
   <ItemGroup />

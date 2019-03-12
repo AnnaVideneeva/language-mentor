@@ -2,7 +2,7 @@
 using AutoMapper;
 using LanguageMentor.Services.Constants.Enums;
 using LanguageMentor.Services.Interfaces;
-
+using LanguageMentor.Web.Api.Models;
 
 namespace LanguageMentor.Web.Api.Controllers
 {
@@ -24,14 +24,12 @@ namespace LanguageMentor.Web.Api.Controllers
         {
             var examination = _examinationService.Get(ExaminationTypes.DiagnosticExamination);
 
-            return Ok(examination);
+            return Ok(_mapper.Map<ExaminationModel>(examination));
         }
 
         [HttpPost]
-        public IHttpActionResult CheckTest()
+        public IHttpActionResult CheckTest(ExaminationModel examination)
         {
-            var examination = _examinationService.Get(ExaminationTypes.DiagnosticExamination);
-
             return Ok(examination);
         }
     }

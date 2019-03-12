@@ -76,6 +76,7 @@
     <Compile Include="Providers\AnswerProvider.cs" />
     <Compile Include="Providers\ExaminationProvider.cs" />
     <Compile Include="Providers\ExerciseProvider.cs" />
+    <Compile Include="Providers\LevelProvider.cs" />
     <Compile Include="Providers\PointProvider.cs" />
   </ItemGroup>
   <ItemGroup>
