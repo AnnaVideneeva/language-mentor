@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace LanguageMentor.Services.Logic.Configurations.MappingConfigurations
+namespace LanguageMentor.Services.Implementation.Configurations.MappingConfigurations
 {
     public class ServicesMapperProfile : Profile
     {

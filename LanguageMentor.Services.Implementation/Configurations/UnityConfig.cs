@@ -3,7 +3,7 @@ using Unity.Lifetime;
 using LanguageMentor.Data.EF6.Providers;
 using LanguageMentor.Data.Providers;
 
-namespace LanguageMentor.Services.Logic.Configurations
+namespace LanguageMentor.Services.Implementation.Configurations
 {
     public static class UnityConfig
     {

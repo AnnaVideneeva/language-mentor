@@ -5,7 +5,7 @@ using LanguageMentor.Services.Constants.Enums;
 using LanguageMentor.Services.Interfaces;
 using LanguageMentor.Services.Models;
 
-namespace LanguageMentor.Services.Logic.Services
+namespace LanguageMentor.Services.Implementation.Services
 {
     public class ExaminationService : IExaminationService
     {

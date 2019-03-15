@@ -2,7 +2,7 @@
 using LanguageMentor.Data.Entities;
 using LanguageMentor.Services.Models;
 
-namespace LanguageMentor.Services.Logic.Configurations.MappingConfigurations
+namespace LanguageMentor.Services.Implementation.Configurations.MappingConfigurations
 {
     public class PointMapping
     {

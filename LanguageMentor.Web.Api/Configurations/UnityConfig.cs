@@ -4,10 +4,10 @@ using Unity.Lifetime;
 using AutoMapper;
 using LanguageMentor.Data.EF6.Configurations;
 using LanguageMentor.Services.Interfaces;
-using LanguageMentor.Services.Logic.Services;
-using LanguageMentor.Services.Logic.Configurations;
+using LanguageMentor.Services.Implementation.Services;
+using LanguageMentor.Services.Implementation.Configurations;
 using LanguageMentor.Web.Api.Mapping;
-using LanguageMentor.Services.Logic.Configurations.MappingConfigurations;
+using LanguageMentor.Services.Implementation.Configurations.MappingConfigurations;
 
 namespace LanguageMentor.Web.Api.Configurations
 {

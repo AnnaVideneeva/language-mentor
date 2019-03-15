@@ -2,9 +2,9 @@
 using LanguageMentor.Data.Entities;
 using LanguageMentor.Services.Models;
 
-namespace LanguageMentor.Services.Logic.Configurations.MappingConfigurations
+namespace LanguageMentor.Services.Implementation.Configurations.MappingConfigurations
 {
-    public class ExerciseMapping
+    public class ExaminationMapping
     {
         public static void CreateMap(IProfileExpression mapperProfile)
         {
@@ -14,12 +14,12 @@ namespace LanguageMentor.Services.Logic.Configurations.MappingConfigurations
 
         private static void ToServiceModel(IProfileExpression mapper)
         {
-            mapper.CreateMap<Exercise, ExerciseEntity>();
+            mapper.CreateMap<Examination, ExaminationEntity>();
         }
 
         private static void ToDbModel(IProfileExpression mapper)
         {
-            mapper.CreateMap<ExerciseEntity, Exercise>();
+            mapper.CreateMap<ExaminationEntity, Examination>();
         }
     }
 }
