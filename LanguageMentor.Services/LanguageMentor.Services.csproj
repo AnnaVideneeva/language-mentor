@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants\Enums\ExaminationTypes.cs" />
-    <Compile Include="Constants\Enums\Levels.cs" />
+    <Compile Include="Constants\ExaminationTypes.cs" />
+    <Compile Include="Constants\Levels.cs" />
     <Compile Include="Interfaces\IExaminationService.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Examination.cs" />
