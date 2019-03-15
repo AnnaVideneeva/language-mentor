@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Linq.Expressions;
 
 namespace LanguageMentor.Core.Data.EF6
 {
@@ -23,20 +20,15 @@ namespace LanguageMentor.Core.Data.EF6
             return _dbSet.AsNoTracking();
         }
 
-        public TEntity Find(int id)
+        public IQueryable<TEntity> Get()
         {
-            return _dbSet.Find(id);
+            return _dbSet.AsQueryable();
         }
 
-        public virtual void Update(TEntity entity)
+        public void Update(TEntity entity)
         {
             _dbSet.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
-        }
-
-        public IEnumerable<TEntity> Search(Expression<Func<TEntity, bool>> predicate)
-        {
-            return _dbSet.Where(predicate).ToList();
         }
     }
 }

@@ -49,7 +49,7 @@ namespace LanguageMentor.Core.Data.EF6
             Database.SetInitializer<TContext>(null);
 
             context.Configuration.AutoDetectChangesEnabled = false;
-            context.Configuration.LazyLoadingEnabled = false;
+            context.Configuration.LazyLoadingEnabled = true;
         }
     }
 }
