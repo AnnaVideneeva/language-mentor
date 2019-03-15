@@ -7,7 +7,7 @@ using LanguageMentor.Data.EF6.Configurations.DbContexts;
 
 namespace LanguageMentor.Data.EF6.Configurations
 {
-    public static class UnityConfig
+    public static class UnityConfiguration
     {
         public static void RegisterDefaultUnitOfWork(this IUnityContainer container, string connectionString)
         {

@@ -4,9 +4,9 @@ using LanguageMentor.Data.Entities;
 
 namespace LanguageMentor.Data.EF6.Configurations.EntityConfigurations
 {
-    public sealed class LevelEntityConfig : EntityTypeConfiguration<LevelEntity>
+    public sealed class LevelEntityConfiguration : EntityTypeConfiguration<LevelEntity>
     {
-        public LevelEntityConfig()
+        public LevelEntityConfiguration()
         {
             ToTable("levels");
 

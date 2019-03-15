@@ -5,7 +5,7 @@ using LanguageMentor.Data.Providers;
 
 namespace LanguageMentor.Services.Implementation.Configurations
 {
-    public static class UnityConfig
+    public static class UnityConfiguration
     {
         public static IUnityContainer RegisterProviders(this IUnityContainer container)
         {

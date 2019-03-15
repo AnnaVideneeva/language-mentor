@@ -58,15 +58,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\DbContexts\LanguageMentorDbContext.cs" />
-    <Compile Include="Configurations\EntityConfigurations\AnswerEntityConfig.cs" />
-    <Compile Include="Configurations\EntityConfigurations\ExaminationEntityConfig.cs" />
-    <Compile Include="Configurations\EntityConfigurations\ExaminationTypeEntityConfig.cs" />
-    <Compile Include="Configurations\EntityConfigurations\ExerciseEntityConfig.cs" />
-    <Compile Include="Configurations\EntityConfigurations\ExerciseExaminationPoolEntityConfig.cs" />
-    <Compile Include="Configurations\EntityConfigurations\LevelEntityConfig.cs" />
-    <Compile Include="Configurations\EntityConfigurations\PointAnswerPoolEntityConfig.cs" />
-    <Compile Include="Configurations\EntityConfigurations\PointEntityConfig.cs" />
-    <Compile Include="Configurations\UnityConfig.cs" />
+    <Compile Include="Configurations\EntityConfigurations\AnswerEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\ExaminationEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\ExaminationTypeEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\ExerciseEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\ExerciseExaminationPoolEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\LevelEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\PointAnswerPoolEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\PointEntityConfiguration.cs" />
+    <Compile Include="Configurations\UnityConfiguration.cs" />
     <Compile Include="Migrations\201903121758037_Initial.cs" />
     <Compile Include="Migrations\201903121758037_Initial.Designer.cs">
       <DependentUpon>201903121758037_Initial.cs</DependentUpon>

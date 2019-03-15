@@ -61,7 +61,7 @@
     <Compile Include="Configurations\MappingConfigurations\ExerciseMapping.cs" />
     <Compile Include="Configurations\MappingConfigurations\PointMapping.cs" />
     <Compile Include="Configurations\MappingConfigurations\ServicesMapperProfile.cs" />
-    <Compile Include="Configurations\UnityConfig.cs" />
+    <Compile Include="Configurations\UnityConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ExaminationService.cs" />
   </ItemGroup>

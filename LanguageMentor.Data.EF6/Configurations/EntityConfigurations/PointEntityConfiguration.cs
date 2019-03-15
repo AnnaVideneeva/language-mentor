@@ -4,9 +4,9 @@ using LanguageMentor.Data.Entities;
 
 namespace LanguageMentor.Data.EF6.Configurations.EntityConfigurations
 {
-    public sealed class PointEntityConfig : EntityTypeConfiguration<PointEntity>
+    public sealed class PointEntityConfiguration : EntityTypeConfiguration<PointEntity>
     {
-        public PointEntityConfig()
+        public PointEntityConfiguration()
         {
             ToTable("points");
 

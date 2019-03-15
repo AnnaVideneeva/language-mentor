@@ -98,8 +98,8 @@
   <ItemGroup>
     <Compile Include="Configurations\MappingConfigurations\ExaminationModelMapping.cs" />
     <Compile Include="Configurations\MappingConfigurations\ExerciseModelMapping.cs" />
-    <Compile Include="Configurations\WebApiConfig.cs" />
-    <Compile Include="Configurations\UnityConfig.cs" />
+    <Compile Include="Configurations\WebApiConfiguration.cs" />
+    <Compile Include="Configurations\UnityConfiguration.cs" />
     <Compile Include="Controllers\ExaminationController.cs" />
     <Compile Include="Configurations\MappingConfigurations\AnswerModelMapping.cs" />
     <Compile Include="Configurations\MappingConfigurations\PointModelMapping.cs" />

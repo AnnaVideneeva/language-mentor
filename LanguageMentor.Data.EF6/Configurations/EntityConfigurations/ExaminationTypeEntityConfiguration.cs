@@ -4,9 +4,9 @@ using LanguageMentor.Data.Entities;
 
 namespace LanguageMentor.Data.EF6.Configurations.EntityConfigurations
 {
-    public sealed class ExaminationTypeEntityConfig : EntityTypeConfiguration<ExaminationTypeEntity>
+    public sealed class ExaminationTypeEntityConfiguration : EntityTypeConfiguration<ExaminationTypeEntity>
     {
-        public ExaminationTypeEntityConfig()
+        public ExaminationTypeEntityConfiguration()
         {
             ToTable("examination_types");
 

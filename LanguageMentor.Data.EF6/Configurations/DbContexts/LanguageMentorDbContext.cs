@@ -41,14 +41,14 @@ namespace LanguageMentor.Data.EF6.Configurations.DbContexts
         {
             modelBuilder.HasDefaultSchema("LanguageMentorDb");
 
-            modelBuilder.Configurations.Add(new AnswerEntityConfig());
-            modelBuilder.Configurations.Add(new ExaminationEntityConfig());
-            modelBuilder.Configurations.Add(new ExaminationTypeEntityConfig());
-            modelBuilder.Configurations.Add(new ExerciseEntityConfig());
-            modelBuilder.Configurations.Add(new ExerciseExaminationPoolEntityConfig());
-            modelBuilder.Configurations.Add(new LevelEntityConfig());
-            modelBuilder.Configurations.Add(new PointEntityConfig());
-            modelBuilder.Configurations.Add(new PointAnswerPoolEntityConfig());
+            modelBuilder.Configurations.Add(new AnswerEntityConfiguration());
+            modelBuilder.Configurations.Add(new ExaminationEntityConfiguration());
+            modelBuilder.Configurations.Add(new ExaminationTypeEntityConfiguration());
+            modelBuilder.Configurations.Add(new ExerciseEntityConfiguration());
+            modelBuilder.Configurations.Add(new ExerciseExaminationPoolEntityConfiguration());
+            modelBuilder.Configurations.Add(new LevelEntityConfiguration());
+            modelBuilder.Configurations.Add(new PointEntityConfiguration());
+            modelBuilder.Configurations.Add(new PointAnswerPoolEntityConfiguration());
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Web.Http;
 
 namespace LanguageMentor.Web.Api.Configurations
 {
-    public static class WebApiConfig
+    public static class WebApiConfiguration
     {
         public static void WebApiConfigure(this HttpConfiguration config)
         {
