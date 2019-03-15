@@ -74,7 +74,7 @@
       <Project>{c57d1c6f-2b2d-411c-8922-fdfde3fefeba}</Project>
       <Name>LanguageMentor.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LanguageMentor.Services.Interfaces\LanguageMentor.Services.csproj">
+    <ProjectReference Include="..\LanguageMentor.Services\LanguageMentor.Services.csproj">
       <Project>{fcce1af2-c306-4092-838a-cf1b9e6185a5}</Project>
       <Name>LanguageMentor.Services</Name>
     </ProjectReference>
