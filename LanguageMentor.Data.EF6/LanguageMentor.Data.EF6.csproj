@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Configurations\DbContexts\LanguageMentorDbContext.cs" />
     <Compile Include="Configurations\EntityConfigurations\AnswerEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\EntityConfiguration.cs" />
     <Compile Include="Configurations\EntityConfigurations\ExaminationEntityConfiguration.cs" />
     <Compile Include="Configurations\EntityConfigurations\ExaminationTypeEntityConfiguration.cs" />
     <Compile Include="Configurations\EntityConfigurations\ExerciseEntityConfiguration.cs" />

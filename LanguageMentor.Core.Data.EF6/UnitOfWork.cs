@@ -15,13 +15,13 @@ namespace LanguageMentor.Core.Data.EF6
             ConfigureContext(_context);
         }
 
-        public virtual void SaveChanges()
+        public void SaveChanges()
         {
             _context.ChangeTracker.DetectChanges();
             _context.SaveChanges();
         }
 
-        public virtual IRepository<TEntity> Repository<TEntity>() where TEntity : class
+        public IRepository<TEntity> Repository<TEntity>() where TEntity : class
         {
             return new GenericRepository<TEntity>(_context);
         }
