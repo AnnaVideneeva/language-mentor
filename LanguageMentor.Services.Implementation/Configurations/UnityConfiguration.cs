@@ -9,11 +9,11 @@ namespace LanguageMentor.Services.Implementation.Configurations
     {
         public static IUnityContainer RegisterProviders(this IUnityContainer container)
         {
-            container.RegisterType<IExaminationProvider, ExaminationProvider>(new HierarchicalLifetimeManager());
-            container.RegisterType<IExerciseProvider, ExerciseProvider>(new HierarchicalLifetimeManager());
-            container.RegisterType<IPointProvider, PointProvider>(new HierarchicalLifetimeManager());
-            container.RegisterType<IAnswerProvider, AnswerProvider>(new HierarchicalLifetimeManager());
-            container.RegisterType<ILevelProvider, LevelProvider>(new HierarchicalLifetimeManager());
+            container.RegisterType<IExaminationProvider, ExaminationProvider>(new PerResolveLifetimeManager());
+            container.RegisterType<IExerciseProvider, ExerciseProvider>(new PerResolveLifetimeManager());
+            container.RegisterType<IPointProvider, PointProvider>(new PerResolveLifetimeManager());
+            container.RegisterType<IAnswerProvider, AnswerProvider>(new PerResolveLifetimeManager());
+            container.RegisterType<ILevelProvider, LevelProvider>(new PerResolveLifetimeManager());
 
             return container;
         }

@@ -11,8 +11,8 @@ namespace LanguageMentor.Data.EF6.Configurations
     {
         public static void RegisterDefaultUnitOfWork(this IUnityContainer container, string connectionString)
         {
-            container.RegisterType<IUnitOfWork, UnitOfWork<LanguageMentorDbContext>>(new HierarchicalLifetimeManager());
-            container.RegisterType<LanguageMentorDbContext>(new HierarchicalLifetimeManager(), new InjectionConstructor(connectionString));
+            container.RegisterType<IUnitOfWork, UnitOfWork<LanguageMentorDbContext>>(new PerResolveLifetimeManager());
+            container.RegisterType<LanguageMentorDbContext>(new PerResolveLifetimeManager(), new InjectionConstructor(connectionString));
         }
     }
 }

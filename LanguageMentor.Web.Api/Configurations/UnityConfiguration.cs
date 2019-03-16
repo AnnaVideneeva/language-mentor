@@ -24,7 +24,7 @@ namespace LanguageMentor.Web.Api.Configurations
 
         private static IUnityContainer RegisterServices(this IUnityContainer container)
         {
-            container.RegisterType<IExaminationService, ExaminationService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IExaminationService, ExaminationService>(new PerResolveLifetimeManager());
 
             return container;
         }
