@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FCCE1AF2-C306-4092-838A-CF1B9E6185A5}</ProjectGuid>
+    <ProjectGuid>{7E2FBD58-E48C-440A-A6AB-993A43BE5227}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LanguageMentor.Services</RootNamespace>
-    <AssemblyName>LanguageMentor.Services</AssemblyName>
+    <RootNamespace>LanguageMentor.Core.Data</RootNamespace>
+    <AssemblyName>LanguageMentor.Core.Data</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,17 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants\ExaminationTypes.cs" />
-    <Compile Include="Constants\Levels.cs" />
-    <Compile Include="Interfaces\IExaminationService.cs" />
-    <Compile Include="Models\Answer.cs" />
-    <Compile Include="Models\Examination.cs" />
-    <Compile Include="Models\ExaminationType.cs" />
-    <Compile Include="Models\Exercise.cs" />
-    <Compile Include="Models\Level.cs" />
-    <Compile Include="Models\Point.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

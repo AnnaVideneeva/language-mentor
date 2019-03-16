@@ -1,9 +1,13 @@
-﻿using Unity;
+﻿using System.Configuration;
+using Unity;
 using Unity.Lifetime;
 using AutoMapper;
+using LanguageMentor.Data.EF6.Configurations;
 using LanguageMentor.Services.Interfaces;
-using LanguageMentor.Services.Logic.Services;
+using LanguageMentor.Services.Implementation.Services;
+using LanguageMentor.Services.Implementation.Configurations;
 using LanguageMentor.Web.Api.Mapping;
+using LanguageMentor.Services.Implementation.Configurations.MappingConfigurations;
 
 namespace LanguageMentor.Web.Api.Configurations
 {
@@ -13,12 +17,14 @@ namespace LanguageMentor.Web.Api.Configurations
         {
             return container
                 .RegisterServices()
-                .RegisterMappers();
+                .RegisterMappers()
+                .RegisterProviders()
+                .RegisterUnitOfWork();
         }
 
         private static IUnityContainer RegisterServices(this IUnityContainer container)
         {
-            container.RegisterType<ITestsService, TestsService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IExaminationService, ExaminationService>(new PerResolveLifetimeManager());
 
             return container;
         }
@@ -28,10 +34,18 @@ namespace LanguageMentor.Web.Api.Configurations
             Mapper.Initialize(mapperConfig =>
             {
                 mapperConfig.AddProfile<WebApiMapperProfile>();
+                mapperConfig.AddProfile<ServicesMapperProfile>();
             });
 
             container.RegisterInstance(Mapper.Instance);
 
+            return container;
+        }
+
+        private static IUnityContainer RegisterUnitOfWork(this IUnityContainer container)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["LanguageMentorConnection"]?.ConnectionString;
+            container.RegisterDefaultUnitOfWork(connectionString);
             return container;
         }
     }

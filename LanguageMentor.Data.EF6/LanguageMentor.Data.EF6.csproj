@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6CDCB12-2E8C-4C46-B9BD-F3A3C90F1550}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LanguageMentor.Data.EF6</RootNamespace>
+    <AssemblyName>LanguageMentor.Data.EF6</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.9.7\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.9.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.9.7\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configurations\DbContexts\LanguageMentorDbContext.cs" />
+    <Compile Include="Configurations\EntityConfigurations\AnswerEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\EntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\ExaminationEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\ExaminationTypeEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\ExerciseEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\ExerciseExaminationPoolEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\LevelEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\PointAnswerPoolEntityConfiguration.cs" />
+    <Compile Include="Configurations\EntityConfigurations\PointEntityConfiguration.cs" />
+    <Compile Include="Configurations\UnityConfiguration.cs" />
+    <Compile Include="Migrations\201903121758037_Initial.cs" />
+    <Compile Include="Migrations\201903121758037_Initial.Designer.cs">
+      <DependentUpon>201903121758037_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\AnswerProvider.cs" />
+    <Compile Include="Providers\ExaminationProvider.cs" />
+    <Compile Include="Providers\ExerciseProvider.cs" />
+    <Compile Include="Providers\LevelProvider.cs" />
+    <Compile Include="Providers\PointProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LanguageMentor.Core.Data.EF6\LanguageMentor.Core.Data.EF6.csproj">
+      <Project>{7f4c5c3d-65df-4055-a6bc-f306c34a82df}</Project>
+      <Name>LanguageMentor.Core.Data.EF6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LanguageMentor.Core.Data\LanguageMentor.Core.Data.csproj">
+      <Project>{7e2fbd58-e48c-440a-a6ab-993a43be5227}</Project>
+      <Name>LanguageMentor.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LanguageMentor.Data\LanguageMentor.Data.csproj">
+      <Project>{c57d1c6f-2b2d-411c-8922-fdfde3fefeba}</Project>
+      <Name>LanguageMentor.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903121758037_Initial.resx">
+      <DependentUpon>201903121758037_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

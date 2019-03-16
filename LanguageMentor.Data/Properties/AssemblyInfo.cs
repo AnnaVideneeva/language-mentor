@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LanguageMentor.Services")]
+[assembly: AssemblyTitle("LanguageMentor.Data")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EPAM Systems")]
-[assembly: AssemblyProduct("LanguageMentor.Services")]
+[assembly: AssemblyProduct("LanguageMentor.Data")]
 [assembly: AssemblyCopyright("Copyright © EPAM Systems 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fcce1af2-c306-4092-838a-cf1b9e6185a5")]
+[assembly: Guid("c57d1c6f-2b2d-411c-8922-fdfde3fefeba")]
 
 // Version information for an assembly consists of the following four values:
 //

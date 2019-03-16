@@ -46,6 +46,12 @@
     <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -60,6 +66,8 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -78,25 +86,30 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.7\lib\net45\System.Web.Http.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Abstractions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.5.9.6\lib\net46\Unity.Abstractions.dll</HintPath>
+      <HintPath>..\packages\Unity.5.9.7\lib\net46\Unity.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Container, Version=5.9.6.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.5.9.6\lib\net46\Unity.Container.dll</HintPath>
+    <Reference Include="Unity.Container, Version=5.9.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.9.7\lib\net46\Unity.Container.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configurations\WebApiConfig.cs" />
-    <Compile Include="Configurations\UnityConfig.cs" />
-    <Compile Include="Controllers\TestsController.cs" />
-    <Compile Include="Mapping\AnswerModelMapping.cs" />
-    <Compile Include="Mapping\TaskModelMapping.cs" />
-    <Compile Include="Mapping\WebApiMapperProfile.cs" />
+    <Compile Include="Configurations\MappingConfigurations\ExaminationModelMapping.cs" />
+    <Compile Include="Configurations\MappingConfigurations\ExerciseModelMapping.cs" />
+    <Compile Include="Configurations\WebApiConfiguration.cs" />
+    <Compile Include="Configurations\UnityConfiguration.cs" />
+    <Compile Include="Controllers\ExaminationController.cs" />
+    <Compile Include="Configurations\MappingConfigurations\AnswerModelMapping.cs" />
+    <Compile Include="Configurations\MappingConfigurations\PointModelMapping.cs" />
+    <Compile Include="Configurations\MappingConfigurations\WebApiMapperProfile.cs" />
     <Compile Include="Models\AnswerModel.cs" />
-    <Compile Include="Models\TaskRequestModel.cs" />
-    <Compile Include="Models\TaskResponseModel.cs" />
+    <Compile Include="Models\ExaminationModel.cs" />
+    <Compile Include="Models\ExaminationTypeModel.cs" />
+    <Compile Include="Models\ExerciseModel.cs" />
+    <Compile Include="Models\LevelModel.cs" />
+    <Compile Include="Models\PointModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -114,12 +127,16 @@
       <Project>{f7dcf7ed-6d0a-4d96-a763-60a495b66139}</Project>
       <Name>LanguageMentor.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LanguageMentor.Services.Interfaces\LanguageMentor.Services.Interfaces.csproj">
-      <Project>{fcce1af2-c306-4092-838a-cf1b9e6185a5}</Project>
-      <Name>LanguageMentor.Services.Interfaces</Name>
+    <ProjectReference Include="..\LanguageMentor.Data.EF6\LanguageMentor.Data.EF6.csproj">
+      <Project>{c6cdcb12-2e8c-4c46-b9bd-f3a3c90f1550}</Project>
+      <Name>LanguageMentor.Data.EF6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LanguageMentor.Services.Implementation\LanguageMentor.Services.Implementation.csproj">
+      <Project>{922a6f3d-b4e2-4891-9fc4-96b134aeb552}</Project>
+      <Name>LanguageMentor.Services.Implementation</Name>
     </ProjectReference>
     <ProjectReference Include="..\LanguageMentor.Services\LanguageMentor.Services.csproj">
-      <Project>{922a6f3d-b4e2-4891-9fc4-96b134aeb552}</Project>
+      <Project>{fcce1af2-c306-4092-838a-cf1b9e6185a5}</Project>
       <Name>LanguageMentor.Services</Name>
     </ProjectReference>
   </ItemGroup>
