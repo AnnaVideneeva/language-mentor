@@ -10,10 +10,10 @@ namespace LanguageMentor.Services.Models
 
         public int ExerciseId { get; set; }
 
-        public IList<Answer> AnswerChoices { get; set; }
+        public IEnumerable<Answer> AnswerChoices { get; set; }
 
-        public IList<Answer> CorrectAnswers { get; set; }
+        public IEnumerable<Answer> CorrectAnswers { get; set; }
 
-        public IList<Answer> SelectedAnswers { get; set; }
+        public IEnumerable<Answer> SelectedAnswers { get; set; }
     }
 }

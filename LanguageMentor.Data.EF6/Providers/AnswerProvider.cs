@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using LanguageMentor.Core.Data;
 using LanguageMentor.Data.Entities;
 using LanguageMentor.Data.Providers;
@@ -15,7 +14,7 @@ namespace LanguageMentor.Data.EF6.Providers
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<AnswerEntity> GetAnswerChoices(int pointId)
+        public IQueryable<AnswerEntity> GetAnswerChoices(int pointId)
         {
             return _unitOfWork.Repository<PointAnswerPoolEntity>().GetAsNoTracking()
                 .Join(
@@ -31,7 +30,7 @@ namespace LanguageMentor.Data.EF6.Providers
                 .Select(join => join.answer);
         }
         
-        public IEnumerable<AnswerEntity> GetCorrectAnswers(int pointId)
+        public IQueryable<AnswerEntity> GetCorrectAnswers(int pointId)
         {
             return _unitOfWork.Repository<PointAnswerPoolEntity>().GetAsNoTracking()
                 .Join(
@@ -44,7 +43,7 @@ namespace LanguageMentor.Data.EF6.Providers
                         answer
                     })
                 .Where(join => join.pointAnswerPool.PointId == pointId
-                    && join.pointAnswerPool.IsCorrectAnswer == true)
+                    && join.pointAnswerPool.IsCorrectAnswer)
                 .Select(join => join.answer);
         }
     }

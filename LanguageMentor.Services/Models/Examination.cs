@@ -10,6 +10,6 @@ namespace LanguageMentor.Services.Models
 
         public int ExaminationTypeId { get; set; }
 
-        public IList<Exercise> Exercises { get; set; }
+        public IEnumerable<Exercise> Exercises { get; set; }
     }
 }

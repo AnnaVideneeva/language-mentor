@@ -8,6 +8,6 @@ namespace LanguageMentor.Services.Models
 
         public string ExerciseText { get; set; }
 
-        public virtual IList<Point> Points { get; set; }
+        public IEnumerable<Point> Points { get; set; }
     }
 }

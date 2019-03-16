@@ -1,4 +1,4 @@
-﻿using LanguageMentor.Services.Constants.Enums;
+﻿using LanguageMentor.Services.Constants;
 using LanguageMentor.Services.Models;
 
 namespace LanguageMentor.Services.Interfaces

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using LanguageMentor.Core.Data;
 using LanguageMentor.Data.Entities;
 using LanguageMentor.Data.Providers;
@@ -15,7 +14,7 @@ namespace LanguageMentor.Data.EF6.Providers
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<ExerciseEntity> GetByExamination(int examinationId)
+        public IQueryable<ExerciseEntity> GetByExamination(int examinationId)
         {
             return _unitOfWork.Repository<ExerciseEntity>().GetAsNoTracking()
                 .Join(

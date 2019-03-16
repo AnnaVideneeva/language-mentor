@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using AutoMapper;
 using LanguageMentor.Data.Providers;
-using LanguageMentor.Services.Constants.Enums;
+using LanguageMentor.Services.Constants;
 using LanguageMentor.Services.Interfaces;
 using LanguageMentor.Services.Models;
 

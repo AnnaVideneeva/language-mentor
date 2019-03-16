@@ -2,6 +2,6 @@
 {
     public enum ExaminationTypes
     {
-        DiagnosticExamination
+        DiagnosticExamination = 1
     }
 }

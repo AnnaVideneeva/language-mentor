@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 using AutoMapper;
-using LanguageMentor.Services.Constants.Enums;
+using LanguageMentor.Services.Constants;
 using LanguageMentor.Services.Interfaces;
 using LanguageMentor.Web.Api.Models;
 

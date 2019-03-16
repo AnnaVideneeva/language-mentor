@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 using LanguageMentor.Data.Entities;
 
 namespace LanguageMentor.Data.Providers
 {
     public interface IAnswerProvider
     {
-        IEnumerable<AnswerEntity> GetAnswerChoices(int pointId);
+        IQueryable<AnswerEntity> GetAnswerChoices(int pointId);
 
-        IEnumerable<AnswerEntity> GetCorrectAnswers(int pointId);
+        IQueryable<AnswerEntity> GetCorrectAnswers(int pointId);
     }
 }

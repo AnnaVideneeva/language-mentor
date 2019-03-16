@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 using LanguageMentor.Core.Data;
 using LanguageMentor.Data.Entities;
 using LanguageMentor.Data.Providers;
@@ -16,7 +16,9 @@ namespace LanguageMentor.Data.EF6.Providers
 
         public LevelEntity Get(int id)
         {
-            return _unitOfWork.Repository<LevelEntity>().Find(id);
+            return _unitOfWork.Repository<LevelEntity>().GetAsNoTracking()
+                .Where(level => level.LevelId == id)
+                .FirstOrDefault();
         }
     }
 }

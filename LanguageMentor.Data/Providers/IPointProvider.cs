@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 using LanguageMentor.Data.Entities;
 
 namespace LanguageMentor.Data.Providers
 {
     public interface IPointProvider
     {
-        IEnumerable<PointEntity> GetByExerciseId(int exerciseId);
+        IQueryable<PointEntity> GetByExerciseId(int exerciseId);
     }
 }

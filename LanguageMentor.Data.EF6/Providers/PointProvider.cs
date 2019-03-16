@@ -1,7 +1,7 @@
-﻿using LanguageMentor.Core.Data;
+﻿using System.Linq;
+using LanguageMentor.Core.Data;
 using LanguageMentor.Data.Entities;
 using LanguageMentor.Data.Providers;
-using System.Collections.Generic;
 
 namespace LanguageMentor.Data.EF6.Providers
 {
@@ -14,9 +14,10 @@ namespace LanguageMentor.Data.EF6.Providers
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<PointEntity> GetByExerciseId(int exerciseId)
+        public IQueryable<PointEntity> GetByExerciseId(int exerciseId)
         {
-            return _unitOfWork.Repository<PointEntity>().Search(point => point.ExerciseId == exerciseId);
+            return _unitOfWork.Repository<PointEntity>().GetAsNoTracking()
+                .Where(point => point.ExerciseId == exerciseId);
         }
     }
 }
