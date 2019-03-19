@@ -104,6 +104,7 @@
     <Compile Include="Configurations\MappingConfigurations\AnswerModelMapping.cs" />
     <Compile Include="Configurations\MappingConfigurations\PointModelMapping.cs" />
     <Compile Include="Configurations\MappingConfigurations\WebApiMapperProfile.cs" />
+    <Compile Include="Filters\ExaminationExceptionFilter.cs" />
     <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\ExaminationModel.cs" />
     <Compile Include="Models\ExaminationTypeModel.cs" />

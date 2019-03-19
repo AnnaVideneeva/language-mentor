@@ -2,10 +2,13 @@
 using AutoMapper;
 using LanguageMentor.Services.Constants;
 using LanguageMentor.Services.Interfaces;
+using LanguageMentor.Services.Models;
+using LanguageMentor.Web.Api.Filters;
 using LanguageMentor.Web.Api.Models;
 
 namespace LanguageMentor.Web.Api.Controllers
 {
+    [ExaminationExceptionFilter]
     public class ExaminationController : ApiController
     {
         private readonly IExaminationService _examinationService;
@@ -30,7 +33,9 @@ namespace LanguageMentor.Web.Api.Controllers
         [HttpPost]
         public IHttpActionResult CheckTest(ExaminationModel examination)
         {
-            return Ok(examination);
+            var level = _examinationService.CheckTest(_mapper.Map<Examination>(examination));
+
+            return Ok(level);
         }
     }
 }

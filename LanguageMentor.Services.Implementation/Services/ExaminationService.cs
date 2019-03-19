@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AutoMapper;
 using LanguageMentor.Data.Providers;
 using LanguageMentor.Services.Constants;
@@ -69,6 +70,8 @@ namespace LanguageMentor.Services.Implementation.Services
 
         public Examination Get(ExaminationTypes examinationType)
         {
+            throw new Exception();
+
             var examinationEntity = _examinationProvider.GetByExaminationType((int)examinationType);
             var examination = _mapper.Map<Examination>(examinationEntity);
 
