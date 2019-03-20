@@ -16,7 +16,8 @@ namespace LanguageMentor.Data.EF6.Providers
 
         public IQueryable<ExerciseEntity> GetByExamination(int examinationId)
         {
-            return _unitOfWork.Repository<ExerciseEntity>().GetAsNoTracking()
+            return _unitOfWork.Repository<ExerciseEntity>()
+                .GetAsNoTracking()
                 .Join(
                     _unitOfWork.Repository<ExerciseExaminationPoolEntity>().GetAsNoTracking(),
                     exercise => exercise.ExerciseId,
