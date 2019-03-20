@@ -1,5 +1,7 @@
-﻿using System.Net.Http.Headers;
+﻿using LanguageMentor.Web.Api.Configurations.ExceptionHandlerConfigurations;
+using System.Net.Http.Headers;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
 
 namespace LanguageMentor.Web.Api.Configurations
 {
@@ -14,6 +16,8 @@ namespace LanguageMentor.Web.Api.Configurations
                 defaults: new { id = RouteParameter.Optional });
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+
+            // config.Services.Replace(typeof(IExceptionHandler), new PassthroughExceptionHandler());
         }
     }
 }

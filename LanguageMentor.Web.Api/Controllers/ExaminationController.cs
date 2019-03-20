@@ -8,7 +8,7 @@ using LanguageMentor.Web.Api.Models;
 
 namespace LanguageMentor.Web.Api.Controllers
 {
-    [ExaminationExceptionFilter]
+    //[ExaminationExceptionFilter]
     public class ExaminationController : ApiController
     {
         private readonly IExaminationService _examinationService;
