@@ -1,7 +1,7 @@
 using System.Web.Http;
 using Swashbuckle.Application;
 
-namespace LanguageMentor.Web.Api
+namespace LanguageMentor.Web.Api.Configurations
 {
     public static class SwaggerConfiguration
     {

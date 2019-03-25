@@ -1,8 +1,6 @@
 ﻿using System.Web.Http;
 using Owin;
 using Microsoft.Owin;
-using LanguageMentor.Core.IoC;
-using LanguageMentor.Core.IoC.Extensions;
 using LanguageMentor.Web.Api;
 using LanguageMentor.Web.Api.Configurations;
 
