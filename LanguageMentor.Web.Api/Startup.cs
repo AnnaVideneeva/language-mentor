@@ -5,7 +5,6 @@ using LanguageMentor.Core.IoC;
 using LanguageMentor.Core.IoC.Extensions;
 using LanguageMentor.Web.Api;
 using LanguageMentor.Web.Api.Configurations;
-using LanguageMentor.Web.Api.Configurations.GlobalExceptionConfigurations;
 
 [assembly: OwinStartup(typeof(Startup))]
 namespace LanguageMentor.Web.Api
@@ -18,11 +17,10 @@ namespace LanguageMentor.Web.Api
 
             // app.Use<GlobalExceptionMiddleware>();
 
-            var ioc = Ioc.CreateContainer();
-            ioc.ApplyDependencies();
-
-            config.WebApiConfigure();
-            config.DependencyResolver = ioc.ToUnityResolver();
+            config
+                .WebApiConfigure()
+                .RegisterUnityIoC()
+                .RegisterSwagger();
 
             app.UseWebApi(config);
         }

@@ -1,13 +1,11 @@
-﻿using LanguageMentor.Web.Api.Configurations.ExceptionHandlerConfigurations;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using System.Web.Http;
-using System.Web.Http.ExceptionHandling;
 
 namespace LanguageMentor.Web.Api.Configurations
 {
     public static class WebApiConfiguration
     {
-        public static void WebApiConfigure(this HttpConfiguration config)
+        public static HttpConfiguration WebApiConfigure(this HttpConfiguration config)
         {
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
@@ -17,7 +15,9 @@ namespace LanguageMentor.Web.Api.Configurations
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
-            // config.Services.Replace(typeof(IExceptionHandler), new PassthroughExceptionHandler());
+            // config.Services.Replace(typeof(IExceptionHandler), new LanguageMentorExceptionHandler());
+
+            return config;  
         }
     }
 }
