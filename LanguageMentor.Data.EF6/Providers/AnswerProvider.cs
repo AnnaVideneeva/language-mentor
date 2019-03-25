@@ -16,7 +16,8 @@ namespace LanguageMentor.Data.EF6.Providers
 
         public IQueryable<AnswerEntity> GetAnswerChoices(int pointId)
         {
-            return _unitOfWork.Repository<PointAnswerPoolEntity>().GetAsNoTracking()
+            return _unitOfWork.Repository<PointAnswerPoolEntity>()
+                .GetAsNoTracking()
                 .Join(
                     _unitOfWork.Repository<AnswerEntity>().GetAsNoTracking(),
                     pointAnswerPool => pointAnswerPool.AnswerId,
@@ -32,7 +33,8 @@ namespace LanguageMentor.Data.EF6.Providers
         
         public IQueryable<AnswerEntity> GetCorrectAnswers(int pointId)
         {
-            return _unitOfWork.Repository<PointAnswerPoolEntity>().GetAsNoTracking()
+            return _unitOfWork.Repository<PointAnswerPoolEntity>()
+                .GetAsNoTracking()
                 .Join(
                     _unitOfWork.Repository<AnswerEntity>().GetAsNoTracking(),
                     pointAnswerPool => pointAnswerPool.AnswerId,

@@ -16,9 +16,9 @@ namespace LanguageMentor.Data.EF6.Providers
 
         public LevelEntity Get(int id)
         {
-            return _unitOfWork.Repository<LevelEntity>().GetAsNoTracking()
-                .Where(level => level.LevelId == id)
-                .FirstOrDefault();
+            return _unitOfWork.Repository<LevelEntity>()
+                .GetAsNoTracking()
+                .FirstOrDefault(level => level.LevelId == id);
         }
     }
 }

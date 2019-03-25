@@ -16,16 +16,16 @@ namespace LanguageMentor.Data.EF6.Providers
 
         public ExaminationEntity Find(int id)
         {
-            return _unitOfWork.Repository<ExaminationEntity>().GetAsNoTracking()
-                .Where(examination => examination.ExaminationId == id)
-                .FirstOrDefault();
+            return _unitOfWork.Repository<ExaminationEntity>()
+                .GetAsNoTracking()
+                .FirstOrDefault(examination => examination.ExaminationId == id);
         }
 
         public ExaminationEntity GetByExaminationType(int examinationTypeId)
         {
-            return _unitOfWork.Repository<ExaminationEntity>().GetAsNoTracking()
-                .Where(examination => examination.ExaminationTypeId == examinationTypeId)
-                .FirstOrDefault();
+            return _unitOfWork.Repository<ExaminationEntity>()
+                .GetAsNoTracking()
+                .FirstOrDefault(examination => examination.ExaminationTypeId == examinationTypeId);
         }
     }
 }
