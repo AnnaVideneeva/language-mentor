@@ -18,7 +18,8 @@ namespace LanguageMentor.Web.Api
             config
                 .WebApiConfigure()
                 .RegisterUnityIoC()
-                .RegisterSwagger();
+                .RegisterSwagger()
+                .EnableCors();
 
             app.UseWebApi(config);
         }

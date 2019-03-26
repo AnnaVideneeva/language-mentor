@@ -8,5 +8,7 @@ namespace LanguageMentor.Data.Providers
         IQueryable<AnswerEntity> GetAnswerChoices(int pointId);
 
         IQueryable<AnswerEntity> GetCorrectAnswers(int pointId);
+
+        void AddRange(IQueryable<AnswerEntity> entities);
     }
 }

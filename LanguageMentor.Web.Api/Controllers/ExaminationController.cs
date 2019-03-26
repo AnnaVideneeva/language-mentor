@@ -1,4 +1,7 @@
-﻿using System.Web.Http;
+﻿using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Web.Http;
 using System.Web.Http.Cors;
 using AutoMapper;
 using LanguageMentor.Services.Constants;
@@ -40,6 +43,14 @@ namespace LanguageMentor.Web.Api.Controllers
             var level = _examinationService.CheckTest(_mapper.Map<Examination>(examination));
 
             return Ok(level);
+        }
+
+        [HttpGet]
+        [Route("converting/{examinationId:int:min(0)}")]
+        public async Task<IHttpActionResult> ConvertToFile(int examinationId)
+        {
+            _examinationService.ConvertToFile(examinationId);
+            return Ok();
         }
     }
 }

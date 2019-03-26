@@ -14,6 +14,14 @@ namespace LanguageMentor.Data.EF6.Providers
             _unitOfWork = unitOfWork;
         }
 
+        public void AddRange(IQueryable<AnswerEntity> entities)
+        {
+            _unitOfWork.Repository<AnswerEntity>()
+                .AddRange(entities);
+
+            _unitOfWork.SaveChanges();
+        }
+
         public IQueryable<AnswerEntity> GetAnswerChoices(int pointId)
         {
             return _unitOfWork.Repository<PointAnswerPoolEntity>()

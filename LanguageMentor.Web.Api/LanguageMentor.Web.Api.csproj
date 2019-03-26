@@ -120,6 +120,7 @@
     <Compile Include="Configurations\GlobalExceptionConfigurations\GlobalExceptionMiddleware.cs" />
     <Compile Include="Configurations\MappingConfigurations\ExaminationModelMapping.cs" />
     <Compile Include="Configurations\MappingConfigurations\ExerciseModelMapping.cs" />
+    <Compile Include="Configurations\SwaggerConfigurations\FileOperationFilter.cs" />
     <Compile Include="Configurations\WebApiConfiguration.cs" />
     <Compile Include="Configurations\UnityConfiguration.cs" />
     <Compile Include="Controllers\ExaminationController.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Configurations\MappingConfigurations\PointModelMapping.cs" />
     <Compile Include="Configurations\MappingConfigurations\WebApiMapperProfile.cs" />
     <Compile Include="Filters\ExaminationExceptionFilter.cs" />
+    <Compile Include="Filters\ValidateMimeMultipartContentFilter.cs" />
     <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\ExaminationModel.cs" />
     <Compile Include="Models\ExaminationTypeModel.cs" />

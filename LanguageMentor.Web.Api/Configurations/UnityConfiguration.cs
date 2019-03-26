@@ -31,6 +31,8 @@ namespace LanguageMentor.Web.Api.Configurations
             return container
                 .RegisterServices()
                 .RegisterMappers()
+                .RegisterSerializers()
+                .RegisterHandlers()
                 .RegisterProviders()
                 .RegisterUnitOfWork();
         }
