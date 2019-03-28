@@ -1,9 +1,0 @@
-<div *ngIf="exercise">
-    <h2>{{exercise.ExerciseText}}</h2>
-    <div *ngFor="let point of exercise.Points">
-      <app-point 
-        [point]="point"
-        (selectedAnswerEvent)="addSelectedAnswer($event)">
-      </app-point>
-    </div>
-</div>
