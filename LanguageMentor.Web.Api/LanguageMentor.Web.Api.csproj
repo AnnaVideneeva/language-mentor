@@ -115,7 +115,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configurations\SwaggerConfiguration.cs" />
+    <Compile Include="Configurations\SwaggerConfigurations\SwaggerConfiguration.cs" />
     <Compile Include="Configurations\ExceptionHandlerConfigurations\LanguageMentorExceptionHandler.cs" />
     <Compile Include="Configurations\GlobalExceptionConfigurations\GlobalExceptionMiddleware.cs" />
     <Compile Include="Configurations\MappingConfigurations\ExaminationModelMapping.cs" />

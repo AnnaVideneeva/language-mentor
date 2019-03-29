@@ -1,10 +1,9 @@
 using System;
 using System.Net.Http;
 using System.Web.Http;
-using LanguageMentor.Web.Api.Configurations.SwaggerConfigurations;
 using Swashbuckle.Application;
 
-namespace LanguageMentor.Web.Api.Configurations
+namespace LanguageMentor.Web.Api.Configurations.SwaggerConfigurations
 {
     public static class SwaggerConfiguration
     {

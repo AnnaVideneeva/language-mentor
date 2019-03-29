@@ -3,6 +3,7 @@ using Owin;
 using Microsoft.Owin;
 using LanguageMentor.Web.Api;
 using LanguageMentor.Web.Api.Configurations;
+using LanguageMentor.Web.Api.Configurations.SwaggerConfigurations;
 
 [assembly: OwinStartup(typeof(Startup))]
 namespace LanguageMentor.Web.Api
