@@ -1,10 +1,10 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
 using Owin;
 using Microsoft.Owin;
-using LanguageMentor.Core.IoC;
-using LanguageMentor.Core.IoC.Extensions;
 using LanguageMentor.Web.Api;
 using LanguageMentor.Web.Api.Configurations;
+using LanguageMentor.Web.Api.Configurations.SwaggerConfigurations;
 
 [assembly: OwinStartup(typeof(Startup))]
 namespace LanguageMentor.Web.Api
@@ -15,11 +15,15 @@ namespace LanguageMentor.Web.Api
         {
             var config = new HttpConfiguration();
 
-            var ioc = Ioc.CreateContainer();
-            ioc.ApplyDependencies();
+            // app.Use<GlobalExceptionMiddleware>();
 
-            config.WebApiConfigure();
-            config.DependencyResolver = ioc.ToUnityResolver();
+            var cors = new EnableCorsAttribute("http://localhost:4200", "*", "*");
+
+            config
+                .WebApiConfigure()
+                .RegisterUnityIoC()
+                .RegisterSwagger()
+                .EnableCors(cors);
 
             app.UseWebApi(config);
         }

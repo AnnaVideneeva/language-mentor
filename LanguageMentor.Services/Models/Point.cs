@@ -15,5 +15,7 @@ namespace LanguageMentor.Services.Models
         public IEnumerable<Answer> CorrectAnswers { get; set; }
 
         public IEnumerable<Answer> SelectedAnswers { get; set; }
+
+        public bool IsMultipleChoices { get; set; }
     }
 }

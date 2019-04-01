@@ -12,8 +12,8 @@ namespace LanguageMentor.Web.Api.Models
 
         public IList<AnswerModel> AnswerChoices { get; set; }
 
-        public IList<AnswerModel> CorrectAnswers { get; set; }
-
         public IList<AnswerModel> SelectedAnswers { get; set; }
+
+        public bool IsMultipleChoices { get; set; }
     }
 }

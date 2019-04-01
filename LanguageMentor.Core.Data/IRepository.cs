@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace LanguageMentor.Core.Data
 {
@@ -11,5 +10,9 @@ namespace LanguageMentor.Core.Data
         IQueryable<TEntity> Get();
 
         void Update(TEntity entity);
+
+        void Add(TEntity entity);
+
+        void AddRange(IQueryable<TEntity> entities);
     }
 }

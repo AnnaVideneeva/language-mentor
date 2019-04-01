@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System.Web.Http;
+using System.Configuration;
 using Unity;
 using Unity.Lifetime;
 using AutoMapper;
@@ -8,16 +9,30 @@ using LanguageMentor.Services.Implementation.Services;
 using LanguageMentor.Services.Implementation.Configurations;
 using LanguageMentor.Web.Api.Mapping;
 using LanguageMentor.Services.Implementation.Configurations.MappingConfigurations;
+using LanguageMentor.Core.IoC;
+using LanguageMentor.Core.IoC.Extensions;
 
 namespace LanguageMentor.Web.Api.Configurations
 {
     public static class UnityConfiguration
     {
-        public static IUnityContainer ApplyDependencies(this IUnityContainer container)
+        public static HttpConfiguration RegisterUnityIoC(this HttpConfiguration config)
+        {
+            var ioc = Ioc.CreateContainer();
+            ioc.ApplyDependencies();
+
+            config.DependencyResolver = ioc.ToUnityResolver();
+
+            return config;
+        }
+
+        private static IUnityContainer ApplyDependencies(this IUnityContainer container)
         {
             return container
                 .RegisterServices()
                 .RegisterMappers()
+                .RegisterSerializers()
+                .RegisterHandlers()
                 .RegisterProviders()
                 .RegisterUnitOfWork();
         }

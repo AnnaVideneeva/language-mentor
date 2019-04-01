@@ -10,7 +10,7 @@ import { LevelModel } from '../models/level-model';
     providedIn: 'root'
   })
 export class ExaminationService {
-    private url = Environment.apiUrl + 'examinations/';
+    private url = Environment.apiUrl + 'api/examinations';
 
     constructor(
         private http: HttpClient
@@ -18,10 +18,10 @@ export class ExaminationService {
     {}
 
     public getExamination(examinationType: ExaminationTypes): Observable<ExaminationModel> {
-        return this.http.get<ExaminationModel>(`${this.url}${examinationType}`);
+        return this.http.get<ExaminationModel>(`${this.url}?examinationType=${examinationType}`);
     }
 
     public getResult(examination: ExaminationModel): Observable<LevelModel> {
-        return this.http.post<LevelModel>(`${this.url}${examination}`, examination);
+        return this.http.post<LevelModel>(`${this.url}`, examination);
     }
 }

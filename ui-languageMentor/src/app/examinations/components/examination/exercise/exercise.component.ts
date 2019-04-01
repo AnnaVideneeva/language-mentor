@@ -9,10 +9,10 @@ import { SelectedAnswerModel } from '../models/selected-answer-model';
   styleUrls: ['./exercise.component.scss']
 })
 export class ExerciseComponent {
-  
+
   @Input() exercise: ExerciseModel;
   @Output() selectedAnswerEvent = new EventEmitter<SelectedAnswerModel>();
-  
+
   private addSelectedAnswer(selectedAnswer: SelectedAnswerModel): void {
     selectedAnswer.ExerciseId = this.exercise.ExerciseId;
     this.selectedAnswerEvent.emit(selectedAnswer);

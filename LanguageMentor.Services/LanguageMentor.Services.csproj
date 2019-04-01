@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Constants\ExaminationTypes.cs" />
     <Compile Include="Constants\Levels.cs" />
+    <Compile Include="Interfaces\Handlers\ILevelCalculationHandler.cs" />
+    <Compile Include="Interfaces\Serializers\IExaminationFileSerializer.cs" />
     <Compile Include="Interfaces\IExaminationService.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Examination.cs" />

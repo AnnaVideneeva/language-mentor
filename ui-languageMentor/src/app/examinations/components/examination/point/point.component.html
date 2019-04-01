@@ -1,7 +1,7 @@
-<div *ngIf="point">
-    <h2>{{point.PointText}}</h2>
-    <div class="custom-control custom-radio" *ngFor="let answer of point.AnswerChoices">
-        <input type="radio" id="{{point.PointId}}${{answer.AnswerId}}" name="{{point.PointId}}" (click)="addSelectedAnswer(point.PointId, answer.AnswerId)" class="custom-control-input">
-        <label class="custom-control-label" for="{{point.PointId}}${{answer.AnswerId}}">{{answer.AnswerText}}</label>
+<div class="content__point" *ngIf="point">
+    <div class="content__point--header">{{point.PointText}}</div>
+    <div class="custom-control custom-radio content__point--answer" *ngFor="let answer of point.AnswerChoices">
+        <input type="radio" class="custom-control-input" id="{{point.PointId}}${{answer.AnswerId}}" name="{{point.PointId}}" (click)="addSelectedAnswer(point.PointId, answer.AnswerId)">
+        <label class="custom-control-label" for="{{point.PointId}}${{answer.AnswerId}}">{{answer.AnswerText}}</label>    
     </div>
 </div>

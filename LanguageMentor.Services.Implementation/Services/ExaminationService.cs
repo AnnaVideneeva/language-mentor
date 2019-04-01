@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using LanguageMentor.Data.Providers;
 using LanguageMentor.Services.Constants;
 using LanguageMentor.Services.Interfaces;
+using LanguageMentor.Services.Interfaces.Converters;
+using LanguageMentor.Services.Interfaces.Handlers;
 using LanguageMentor.Services.Models;
 
 namespace LanguageMentor.Services.Implementation.Services
@@ -15,6 +19,8 @@ namespace LanguageMentor.Services.Implementation.Services
         private readonly IPointProvider _pointProvider;
         private readonly IAnswerProvider _answerProvider;
         private readonly ILevelProvider _levelProvider;
+        private readonly IExaminationFileSerializer _examinationFileSerializer;
+        private readonly ILevelCalculationHandler _levelCalculationHandler;
 
         public ExaminationService(
             IMapper mapper,
@@ -22,7 +28,9 @@ namespace LanguageMentor.Services.Implementation.Services
             IExerciseProvider exerciseProvider,
             IPointProvider pointProvider,
             IAnswerProvider answerProvider,
-            ILevelProvider levelProvider)
+            ILevelProvider levelProvider,
+            IExaminationFileSerializer examinationFileSerializer,
+            ILevelCalculationHandler levelCalculationHandler)
         {
             _mapper = mapper;
             _examinationProvider = examinationProvider;
@@ -30,13 +38,14 @@ namespace LanguageMentor.Services.Implementation.Services
             _pointProvider = pointProvider;
             _answerProvider = answerProvider;
             _levelProvider = levelProvider;
+            _examinationFileSerializer = examinationFileSerializer;
+            _levelCalculationHandler = levelCalculationHandler;
         }
 
         public Level CheckTest(Examination examination)
         {
-            int allPointCount = 0;
-            int correctPointCount = 0;
-            int level = (int)Levels.A1;
+            int allPointsCount = 0;
+            int correctPointsCount = 0;
 
             foreach (var exercise in examination.Exercises)
             {
@@ -45,26 +54,32 @@ namespace LanguageMentor.Services.Implementation.Services
                     var correctAnswersEntities = _answerProvider.GetCorrectAnswers(point.PointId);
                     point.CorrectAnswers = _mapper.Map<IList<Answer>>(correctAnswersEntities);
 
-                    if (point.SelectedAnswers == point.CorrectAnswers)
-                    {
-                        correctPointCount++;
-                    }
+                    correctPointsCount += point.SelectedAnswers
+                        .Select(an => an.AnswerId)
+                        .Count(selectedAnswerId => point.CorrectAnswers.Any(an => an.AnswerId == selectedAnswerId));
 
-                    allPointCount++;
+                    allPointsCount++;
                 }
-
-                level = correctPointCount <= allPointCount * 0.2 ?
-                    (int)Levels.A1 :
-                    (correctPointCount <= allPointCount * 0.4 ?
-                    (int)Levels.A2 :
-                    (correctPointCount <= allPointCount * 0.6 ?
-                    (int)Levels.B1 :
-                    (correctPointCount <= allPointCount * 0.8 ?
-                    (int)Levels.B2 :
-                    (int)Levels.C1)));
             }
 
-            return _mapper.Map<Level>(_levelProvider.Get(level));
+            return _levelCalculationHandler.CalculateLevel(correctPointsCount, allPointsCount);
+        }
+
+        public void ConvertFromFile()
+        {
+            var examination = _examinationFileSerializer.Deserialize();
+            Add(examination);
+        }
+
+        public void ConvertToFile(int examinationId)
+        {
+            var examination = Get(examinationId);
+            _examinationFileSerializer.Serialize(examination);
+        }
+
+        public void Add(Examination examination)
+        {
+            
         }
 
         public Examination Get(ExaminationTypes examinationType)
@@ -72,22 +87,37 @@ namespace LanguageMentor.Services.Implementation.Services
             var examinationEntity = _examinationProvider.GetByExaminationType((int)examinationType);
             var examination = _mapper.Map<Examination>(examinationEntity);
 
-            var exerciseEntities = _exerciseProvider.GetByExamination(examination.ExaminationId);
-            examination.Exercises = _mapper.Map<IList<Exercise>>(exerciseEntities);
+            AddExaminationInfo(examination);
 
-            foreach(var exercise in examination.Exercises)
+            return examination;
+        }
+
+        public Examination Get(int examinationId)
+        {
+            var examinationEntity = _examinationProvider.Find(examinationId);
+            var examination = _mapper.Map<Examination>(examinationEntity);
+
+            AddExaminationInfo(examination);
+
+            return examination;
+        }
+
+        private void AddExaminationInfo(Examination examination)
+        {
+            var exerciseEntities = _exerciseProvider.GetByExamination(examination.ExaminationId);
+            examination.Exercises = _mapper.Map<IList<Exercise>>(exerciseEntities).ToList();
+
+            foreach (var exercise in examination.Exercises)
             {
                 var pointEntities = _pointProvider.GetByExerciseId(exercise.ExerciseId);
-                exercise.Points = _mapper.Map<IList<Point>>(pointEntities);
+                exercise.Points = _mapper.Map<IList<Point>>(pointEntities).ToList();
 
                 foreach (var point in exercise.Points)
                 {
                     var answerChoicesEntities = _answerProvider.GetAnswerChoices(point.PointId);
-                    point.AnswerChoices = _mapper.Map<IList<Answer>>(answerChoicesEntities);
+                    point.AnswerChoices = _mapper.Map<IList<Answer>>(answerChoicesEntities).ToList();
                 }
             }
-
-            return examination;
         }
     }
 }

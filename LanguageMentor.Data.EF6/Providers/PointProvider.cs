@@ -16,7 +16,8 @@ namespace LanguageMentor.Data.EF6.Providers
 
         public IQueryable<PointEntity> GetByExerciseId(int exerciseId)
         {
-            return _unitOfWork.Repository<PointEntity>().GetAsNoTracking()
+            return _unitOfWork.Repository<PointEntity>()
+                .GetAsNoTracking()
                 .Where(point => point.ExerciseId == exerciseId);
         }
     }

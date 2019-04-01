@@ -30,5 +30,15 @@ namespace LanguageMentor.Core.Data.EF6
             _dbSet.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
         }
+
+        public void Add(TEntity entity)
+        {
+            _dbSet.Add(entity);
+        }
+
+        public void AddRange(IQueryable<TEntity> entities)
+        {
+            _dbSet.AddRange(entities);
+        }
     }
 }
