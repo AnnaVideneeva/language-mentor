@@ -1,0 +1,22 @@
+.content {
+    &__examination {
+        padding: 100px;
+
+        &--header {
+            text-align: center;
+        }
+
+        &--body {
+            padding-top: 10px;
+        }
+
+        &--footer {
+            margin: 10px;
+
+            &--level {
+                font-weight: bolder;
+                font-size: 30px;
+            }
+        }
+    }
+}

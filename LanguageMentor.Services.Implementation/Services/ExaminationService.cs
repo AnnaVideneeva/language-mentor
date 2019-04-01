@@ -54,10 +54,9 @@ namespace LanguageMentor.Services.Implementation.Services
                     var correctAnswersEntities = _answerProvider.GetCorrectAnswers(point.PointId);
                     point.CorrectAnswers = _mapper.Map<IList<Answer>>(correctAnswersEntities);
 
-                    if (point.SelectedAnswers == point.CorrectAnswers)
-                    {
-                        correctPointsCount++;
-                    }
+                    correctPointsCount += point.SelectedAnswers
+                        .Select(an => an.AnswerId)
+                        .Count(selectedAnswerId => point.CorrectAnswers.Any(an => an.AnswerId == selectedAnswerId));
 
                     allPointsCount++;
                 }

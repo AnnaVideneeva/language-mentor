@@ -10,6 +10,8 @@ namespace LanguageMentor.Data.Entities
 
         public int ExerciseId { get; set; }
 
+        public bool IsMultipleChoices { get; set; }
+
         public virtual ExerciseEntity Exercise { get; set; }
 
         public virtual ICollection<PointAnswerPoolEntity> PointAnswerPool { get; set; }

@@ -1,13 +1,22 @@
-<div *ngIf="examination">
+
+<div class="content__examination" *ngIf="examination">
     <div class="form-group">
-        <h2>Hello! This examination!</h2>
-        <p class="lead">{{examination.Description}}</p>
-        <div *ngFor="let exercise of examination.Exercises">
+        <div class="content__examination--header">
+            <h2>Hello!</h2>
+            <h3>This diagnostic examination!</h3>
+            <p class="lead">{{examination.Description}}.</p>
+        </div>
+        <div class="content__examination--body" *ngFor="let exercise of examination.Exercises">
           <app-exercise 
             [exercise]="exercise"
             (selectedAnswerEvent)="addSelectedAnswer($event)">
           </app-exercise>
         </div>
-        <button type="button" class="btn btn-outline-secondary" (click)="getResult()">Get result</button>
+        <div class="content__examination--footer" *ngIf="!isLevelLoaded">
+            <button type="button" class="btn btn-outline-secondary" (click)="getResult()">Get result</button>
+        </div>
+        <div class="content__examination--footer" *ngIf="isLevelLoaded">
+          <div class="content__examination--footer--level">Your level: {{level.LevelName}}</div>
+        </div>
     </div>
 </div>

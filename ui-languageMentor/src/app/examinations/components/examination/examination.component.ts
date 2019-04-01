@@ -4,6 +4,7 @@ import { ExaminationModel } from '../../shared/models/examination-model';
 import { ExaminationTypes } from '../../../shared/constants/examination-types';
 import { ExaminationService } from '../../shared/services/examination-service';
 import { SelectedAnswerModel } from './models/selected-answer-model';
+import { LevelModel } from '../../shared/models/level-model';
 
 @Component({
   selector: 'app-examination',
@@ -12,10 +13,12 @@ import { SelectedAnswerModel } from './models/selected-answer-model';
 })
 export class ExaminationComponent implements OnInit {
   private examination: ExaminationModel;
-  private isFilledPoints: boolean = false;
+  private level: LevelModel;
+  private isFilledPoints = false;
+  private isLevelLoaded = false;
 
   @Input() examinationType: ExaminationTypes;
-  
+
   constructor(
     private readonly examinationService: ExaminationService
   ) { }
@@ -26,14 +29,14 @@ export class ExaminationComponent implements OnInit {
   }
 
   private addSelectedAnswer(selectedAnswer: SelectedAnswerModel): void {
-    let point = this.examination
+    const point = this.examination
         .Exercises.find(ex => ex.ExerciseId === selectedAnswer.ExerciseId)
         .Points.find(p => p.PointId === selectedAnswer.PointId);
 
     if ((point.IsMultipleChoices && point.SelectedAnswers.length < point.AnswerChoices.length)
       || (!point.IsMultipleChoices && point.SelectedAnswers.length === 0)) {
         point.SelectedAnswers.push({ AnswerId: selectedAnswer.AnswerId});
-    } 
+    }
   }
 
   private getResult(): void {
@@ -44,11 +47,15 @@ export class ExaminationComponent implements OnInit {
             if (point.SelectedAnswers.length === 0) {
               this.isFilledPoints = false;
             }
-          })
-        })
+          });
+        });
 
     if (this.isFilledPoints) {
-      //send the request
+      this.examinationService.getResult(this.examination)
+        .subscribe(level => {
+          this.isLevelLoaded = true;
+          this.level = level;
+        });
     }
   }
 }

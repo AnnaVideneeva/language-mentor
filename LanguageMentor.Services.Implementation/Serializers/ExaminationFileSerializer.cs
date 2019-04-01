@@ -2,7 +2,7 @@
 using LanguageMentor.Services.Interfaces.Converters;
 using LanguageMentor.Services.Models;
 
-namespace LanguageMentor.Services.Implementation.Converters
+namespace LanguageMentor.Services.Implementation.Serializers
 {
     public class ExaminationFileSerializer : IExaminationFileSerializer
     {

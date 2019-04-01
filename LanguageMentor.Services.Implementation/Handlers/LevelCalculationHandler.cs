@@ -1,4 +1,7 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using AutoMapper;
 using LanguageMentor.Data.Providers;
 using LanguageMentor.Services.Constants;
 using LanguageMentor.Services.Interfaces.Handlers;
@@ -8,6 +11,8 @@ namespace LanguageMentor.Services.Implementation.Handlers
 {
     public class LevelCalculationHandler : ILevelCalculationHandler
     {
+        private const double DivisionValue = 0.166;
+
         private readonly IMapper _mapper;
         private readonly ILevelProvider _levelProvider;
 
@@ -21,17 +26,21 @@ namespace LanguageMentor.Services.Implementation.Handlers
 
         public Level CalculateLevel(int correctPointsCount, int allPointsCount)
         {
-            var level = correctPointsCount <= allPointsCount * 0.2 ?
-                    (int)Levels.A1 :
-                    (correctPointsCount <= allPointsCount * 0.4 ?
-                    (int)Levels.A2 :
-                    (correctPointsCount <= allPointsCount * 0.6 ?
-                    (int)Levels.B1 :
-                    (correctPointsCount <= allPointsCount * 0.8 ?
-                    (int)Levels.B2 :
-                    (int)Levels.C1)));
+            var division = allPointsCount * DivisionValue;
 
-            return _mapper.Map<Level>(_levelProvider.Get(level));
+            var resultsTable = new Dictionary<Func<double, bool>, Func<Levels>> {
+                { x => x <= division, () => Levels.A1 },
+                { x => x > division && x <= division * 2, () => Levels.A2 },
+                { x => x > division * 2 && x <= division * 3, () => Levels.B1 },
+                { x => x > division * 3 && x <= division * 4, () => Levels.B2 },
+                { x => x > division * 4 && x <= division * 5, () => Levels.C1 },
+                { x => x > division * 5 && x <= division * 6, () => Levels.C2 }
+            };
+
+            var level = resultsTable.First(result 
+                => result.Key((double)correctPointsCount / allPointsCount)).Value();
+
+            return _mapper.Map<Level>(_levelProvider.Get((int)level));
         }
     }
 }

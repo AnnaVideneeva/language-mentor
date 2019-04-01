@@ -1,0 +1,16 @@
+.content {
+    &__point {
+        padding: 20px;
+
+        &--header {
+            font-weight: normal;
+            font-size: 25px;
+        }
+
+        &--answer {
+            padding: 5px;
+            font-weight: lighter;
+            font-size: 20px;
+        }
+    }
+}

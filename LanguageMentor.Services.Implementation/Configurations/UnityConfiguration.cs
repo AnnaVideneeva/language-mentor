@@ -2,10 +2,10 @@
 using Unity.Lifetime;
 using LanguageMentor.Data.EF6.Providers;
 using LanguageMentor.Data.Providers;
-using LanguageMentor.Services.Implementation.Converters;
 using LanguageMentor.Services.Interfaces.Converters;
 using LanguageMentor.Services.Interfaces.Handlers;
 using LanguageMentor.Services.Implementation.Handlers;
+using LanguageMentor.Services.Implementation.Serializers;
 
 namespace LanguageMentor.Services.Implementation.Configurations
 {

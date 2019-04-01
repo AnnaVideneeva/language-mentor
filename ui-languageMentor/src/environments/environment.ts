@@ -4,7 +4,7 @@
 
 export const Environment = {
   production: false,
-  apiUrl: 'http://localhost:52571/api/',
+  apiUrl: 'http://localhost/LanguageMentor.Web.Api/',
 };
 
 /*

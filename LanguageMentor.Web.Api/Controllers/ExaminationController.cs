@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using AutoMapper;
@@ -14,7 +12,6 @@ namespace LanguageMentor.Web.Api.Controllers
 {
     [ExaminationExceptionFilter]
     [RoutePrefix("api/examinations")]
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ExaminationController : ApiController
     {
         private readonly IExaminationService _examinationService;
@@ -29,17 +26,28 @@ namespace LanguageMentor.Web.Api.Controllers
         }
 
         [HttpGet]
-        [Route("{examinationType:int:min(0)}")]
+        [Route("")]
         public IHttpActionResult GetExamination(int examinationType)
         {
+            if (examinationType <= 0)
+            {
+                return BadRequest();
+            }
+
             var examination = _examinationService.Get((ExaminationTypes)examinationType);
 
             return Ok(_mapper.Map<ExaminationModel>(examination));
         }
 
         [HttpPost]
+        [Route("")]
         public IHttpActionResult CheckTest(ExaminationModel examination)
         {
+            if (examination == null)
+            {
+                return BadRequest();
+            }
+
             var level = _examinationService.CheckTest(_mapper.Map<Examination>(examination));
 
             return Ok(level);

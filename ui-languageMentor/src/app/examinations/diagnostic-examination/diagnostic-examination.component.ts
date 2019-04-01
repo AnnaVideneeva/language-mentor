@@ -5,7 +5,7 @@ import { ExaminationTypes } from 'src/app/shared/constants/examination-types';
   selector: 'app-diagnostic-examination',
   templateUrl: './diagnostic-examination.component.html'
 })
-export class DiagnosticExaminationComponent implements OnInit { 
+export class DiagnosticExaminationComponent implements OnInit {
     public examinationType: ExaminationTypes;
 
     ngOnInit() {
