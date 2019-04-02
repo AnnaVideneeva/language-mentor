@@ -1,5 +1,4 @@
 ﻿using System.Web.Http;
-using System.Web.Http.Cors;
 using Owin;
 using Microsoft.Owin;
 using LanguageMentor.Web.Api;
@@ -17,13 +16,11 @@ namespace LanguageMentor.Web.Api
 
             // app.Use<GlobalExceptionMiddleware>();
 
-            var cors = new EnableCorsAttribute("http://localhost:4200", "*", "*");
-
             config
                 .WebApiConfigure()
                 .RegisterUnityIoC()
                 .RegisterSwagger()
-                .EnableCors(cors);
+                .EnableCorsConfigure();
 
             app.UseWebApi(config);
         }
