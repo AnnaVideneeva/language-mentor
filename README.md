@@ -1,6 +1,6 @@
 # Language Mentor
 
-Only back-end URL: https://language-mentor.azurewebsites.net
+Swagger URL: https://language-mentor.azurewebsites.net/swagger/ui/index
 
 Application URL: https://languagementorui.z6.web.core.windows.net
 
