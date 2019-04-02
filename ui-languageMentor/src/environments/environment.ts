@@ -4,7 +4,7 @@
 
 export const Environment = {
   production: false,
-  apiUrl: 'http://localhost/LanguageMentor.Web.Api/',
+  apiUrl: 'https://language-mentor.azurewebsites.net/',
 };
 
 /*
